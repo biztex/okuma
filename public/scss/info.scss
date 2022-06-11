@@ -30,6 +30,9 @@ header {
     height: auto;
     z-index: 1;
     background: white;
+    &.worksdetail {
+        background: #e1e1e1;
+    }
     .grey {
         width: 37.5%;
         height: 650px;
@@ -3042,6 +3045,366 @@ header {
     }
 }
 
+.worksDetail {
+    background: #e1e1e1;
+    padding-bottom: 100px;
+    position: relative;
+    .eff_text {
+        position: absolute;
+        font-family: "PristineScript";
+        font-weight: normal;
+        font-size: 95px;
+        letter-spacing: 0.04em;
+        line-height: 143px;
+        text-align: left;
+        color: #fff;
+        top: 292px;
+        width: 600px;
+        height: 0;
+        left: 0;
+        transform: rotate(90deg);
+        z-index: 999;
+        @include media-screen(1280px) {
+            font-family: "PristineScript";
+            font-weight: normal;
+            font-size: (95/1280 * 100vw);
+            letter-spacing: 0.04em;
+            line-height: 72px;
+            text-align: left;
+            color: #ececec;
+        }
+        @include media-screen($smart) {
+            font-size: 36px;
+            width: 250px;
+            top: 119px;
+            left: -8px;
+        }
+    }
+    &_box {
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 100px;
+        background: white;
+        @include media-screen(1280px) {
+            padding: calc(100/1280 * 100vw);
+        }
+        @include media-screen($smart) {
+            padding: 40px 30px;
+        }
+        h2 {
+            font-family: "Noto Sans JP";
+            font-weight: bold;
+            font-size: 30px;
+            letter-spacing: 0.04em;
+            line-height: 60px;
+            text-align: left;
+            color: #000;
+            @include media-screen($smart) {
+                font-family: "Noto Sans JP";
+                font-weight: bold;
+                font-size: 20px;
+                letter-spacing: 0.04em;
+                line-height: 37px;
+                text-align: left;
+                color: #000;
+            }
+        }
+        &_city {
+            font-family: "Noto Sans JP";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            line-height: 30px;
+            text-align: left;
+            color: #7c7c7c;
+            @include media-screen($smart) {
+                font-family: Montserrat;
+                font-weight: normal;
+                font-size: 14px;
+                letter-spacing: 0.04em;
+                line-height: 28px;
+                text-align: center;
+                color: #9b9b9b;
+                margin-top: 10px;
+            }
+        }
+        &_tag {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            @include media-screen($smart) {
+                justify-content: center;
+            }
+            p {
+                font-family: "Noto Sans JP";
+                font-weight: bold;
+                font-size: 14px;
+                letter-spacing: 0.02em;
+                line-height: 32px;
+                text-align: left;
+                color: #2772a8;
+                padding: 0 10px;
+                border: 1px solid #2772A8;
+                @include media-screen($smart) {
+                    font-family: "Noto Sans JP";
+                    font-weight: bold;
+                    font-size: 12px;
+                    letter-spacing: 0.02em;
+                    line-height: 24px;
+                    text-align: left;
+                    color: #2772a8;
+                }
+            }
+        }
+        .line {
+            background: #2772a8;
+            width: 100%;
+            height: 1px;
+            display: block;
+            margin-top: 34px;
+            @include media-screen($smart) {
+                margin-top: 26px;
+            }
+        }
+        &_slider {
+            margin-top: 80px;
+            position: relative;
+            padding-bottom: 100px;
+            @include media-screen($smart) {
+                margin-top: 26px;
+            }
+            .slick-arrow {
+                position: absolute;
+                bottom: 0;
+                width: 40px;
+                height: 40px;
+                background: url(../image/grey_arrow.svg) no-repeat;
+                background-size: 16px;
+                background-position: center;
+                border: 2px solid #7c7c7c;
+                z-index: 10;
+                text-indent: 9999px;
+                cursor: pointer;
+            }
+            .slick-prev {
+                left: 40%;
+                @include media-screen(890px) {
+                    left: 38%;
+                }
+                @include media-screen($smart) {
+                    left: 22%;
+                }
+            }
+            .slider__counter {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+                @include media-screen($smart) {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: white;
+                    text-align: center;
+                    padding-top: 10px;
+                }
+                .slider__counter_div {
+                    @include media-screen($smart) {
+                        width: 50px;
+                    }
+                }
+                .slider__counter_span {
+                    display: block;
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                    font-size: 30px;
+                    letter-spacing: 0.02em;
+                    line-height: 1;
+                    text-align: left;
+                    color: #7c7c7c;
+                    width: fit-content;
+                }
+                .slider__counter_total {
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                    font-size: 13px;
+                    letter-spacing: 0.02em;
+                    line-height: 1;
+                    text-align: right;
+                    color: #7c7c7c;
+                    margin-left: 20px;
+                }
+            }
+            .slick-next {
+                right: 40%;
+                transform: rotate(180deg);
+                @include media-screen(890px) {
+                    right: 38%;
+                }
+                @include media-screen($smart) {
+                    right: 22%;
+                }
+            }
+        }
+        &_exp {
+            margin-top: 80px;
+            font-family: "Noto Sans JP";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            line-height: 30px;
+            text-align: left;
+            color: #000;
+            @include media-screen($smart) {
+                margin-top: 40px;
+            }
+        }
+        &_info {
+            table {
+                width: 100%;
+                margin-top: 80px;
+                border-spacing: 25px 0;
+                border-collapse: separate;
+                @include media-screen($smart) {
+                    border-spacing: 0;
+                    margin-top: 53px;
+                }
+                tr {
+                    td {
+                        @include media-screen($smart) {
+                            width: 100%;
+                            display: block;
+                        }
+                        &:first-of-type {
+                            border-top: 2px solid #000;
+                            font-family: "Noto Sans JP";
+                            font-weight: bold;
+                            font-size: 15px;
+                            letter-spacing: 0.04em;
+                            line-height: 32px;
+                            text-align: left;
+                            color: #000;
+                            padding-left: 15px;
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            @include media-screen($smart) {
+                                border-top: none;
+                                padding-left: 0;
+                                padding-top: 15px;
+                                padding-bottom: 0;
+                                border-bottom: none;
+                            }
+                        }
+                        &:last-of-type {
+                            border-top: 1px solid #000;
+                            padding-left: 15px;
+                            font-family: "Noto Sans JP";
+                            font-weight: normal;
+                            font-size: 15px;
+                            letter-spacing: 0.05em;
+                            line-height: 30px;
+                            text-align: left;
+                            color: #000;
+                            @include media-screen($smart) {
+                                border-bottom: 1px solid #707070;
+                                padding-left: 0;
+                                padding-top: 3px;
+                                padding-bottom: 5px;
+                                border-top: none;
+                            }
+                            a {
+                                font-family: "Noto Sans JP";
+                                font-weight: bold;
+                                font-size: 14px;
+                                letter-spacing: 0.02em;
+                                line-height: 32px;
+                                text-align: left;
+                                color: #2772a8;
+                                border: 1px solid #2772a8;
+                                padding: 0 5px;
+                                @include media-screen($smart) {
+                                    display: block;
+                                    width: fit-content;
+                                    line-height: 22px;
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                    &:last-of-type {
+                        td {
+                            &:first-of-type {
+                                border-bottom: 2px solid #000;
+                                @include media-screen($smart) {
+                                    border-top: none;
+                                    padding-left: 0;
+                                    padding-top: 15px;
+                                    padding-bottom: 0;
+                                    border-bottom: none;
+                                }
+                            }
+                            &:last-of-type {
+                                border-bottom: 1px solid #000;
+                                @include media-screen($smart) {
+                                    border-bottom: 1px solid #707070;
+                                    padding-left: 0;
+                                    padding-top: 3px;
+                                    padding-bottom: 5px;
+                                    border-top: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .linkButton {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 80px;
+            a {
+                &:first-child {
+                    width: 40px;
+                    height: 40px;
+                    background: transparent;
+                    border: 2px solid #7c7c7c;
+                    background: url(../image/grey_arrow.svg) no-repeat;
+                    background-position: center;
+                    background-size: 16.37px;
+                }
+                &:nth-child(2) {
+                    width: 120px;
+                    height: 40px;
+                    background: transparent;
+                    border: 2px solid #7c7c7c;
+                    font-family: "Noto Sans JP";
+                    font-weight: bold;
+                    font-size: 13px;
+                    letter-spacing: 0.02em;
+                    line-height: 1;
+                    text-align: center;
+                    color: #7c7c7c;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &:last-child {
+                    width: 40px;
+                    height: 40px;
+                    background: transparent;
+                    border: 2px solid #7c7c7c;
+                    background: url(../image/grey_arrow.svg) no-repeat;
+                    transform: rotate(180deg);
+                    background-position: center;
+                    background-size: 16.37px;
+                }
+            }
+        }
+    }
+}
+
 .special {
     position: relative;
     display: block;
@@ -3089,4 +3452,154 @@ header {
     top: 50%;
     -webkit-transform: translateZ(0px) translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+}
+
+#A,
+#p,
+#a,
+#a_1_,
+#a_2_,
+#n_2_,
+#n_1_,
+#t_2_,
+#t_1_,
+#i_1_,
+#r,
+#t,
+#m,
+#n,
+#t,
+#n,
+#b,
+#e,
+#u,
+#i,
+#l,
+#d,
+#g {
+    stroke: #fff;
+    fill: transparent;
+    @include media-screen(1280px) {
+        stroke: #ececec;
+    }
+}
+
+#A {
+    stroke-dasharray: 283px;
+    stroke-dashoffset: -283px;
+    animation: line-draw 2s 0.4s forwards;
+}
+
+#n {
+    stroke-dasharray: 188px;
+    stroke-dashoffset: -188px;
+    animation: line-draw 2s 2.4s forwards;
+}
+
+#a {
+    stroke-dasharray: 175px;
+    stroke-dashoffset: -175px;
+    animation: line-draw 2s 4.4s forwards;
+}
+
+#p {
+    stroke-dasharray: 212px;
+    stroke-dashoffset: -212px;
+    animation: line-draw 1.5s 6.4s forwards;
+}
+
+#a_1_ {
+    stroke-dasharray: 175px;
+    stroke-dashoffset: -175px;
+    animation: line-draw 2s 8.4s forwards;
+}
+
+#r {
+    stroke-dasharray: 93px;
+    stroke-dashoffset: -93px;
+    animation: line-draw 2s 10.4s forwards;
+}
+
+#t {
+    stroke-dasharray: 168px;
+    stroke-dashoffset: -168px;
+    animation: line-draw 2s 12.4s forwards;
+}
+
+#m {
+    stroke-dasharray: 240px;
+    stroke-dashoffset: -240px;
+    animation: line-draw 2s 14.4s forwards;
+}
+
+#e {
+    stroke-dasharray: 144px;
+    stroke-dashoffset: -144px;
+    animation: line-draw 2s 16.4s forwards;
+}
+
+#n_1_ {
+    stroke-dasharray: 188px;
+    stroke-dashoffset: -188px;
+    animation: line-draw 2s 18.4s forwards;
+}
+
+#t_1_ {
+    stroke-dasharray: 168px;
+    stroke-dashoffset: -168px;
+    animation: line-draw 2s 20.4s forwards;
+}
+
+#b {
+    stroke-dasharray: 235px;
+    stroke-dashoffset: -235px;
+    animation: line-draw 2s 22.4s forwards;
+}
+
+#u {
+    stroke-dasharray: 173px;
+    stroke-dashoffset: -173px;
+    animation: line-draw 2s 24.4s forwards;
+}
+
+#i {
+    stroke-dasharray: 100px;
+    stroke-dashoffset: -100px;
+    animation: line-draw 2s 26.4s forwards;
+}
+
+#l {
+    stroke-dasharray: 183px;
+    stroke-dashoffset: -183px;
+    animation: line-draw 2s 28.4s forwards;
+}
+
+#d {
+    stroke-dasharray: 259px;
+    stroke-dashoffset: -259px;
+    animation: line-draw 2s 30.4s forwards;
+}
+
+#i_1_ {
+    stroke-dasharray: 100px;
+    stroke-dashoffset: -100px;
+    animation: line-draw 2s 32.4s forwards;
+}
+
+#n_2_ {
+    stroke-dasharray: 188px;
+    stroke-dashoffset: -188px;
+    animation: line-draw 2s 34.4s forwards;
+}
+
+#g {
+    stroke-dasharray: 245px;
+    stroke-dashoffset: -245px;
+    animation: line-draw 2s 36.4s forwards;
+}
+
+@keyframes line-draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
 }

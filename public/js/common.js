@@ -48,7 +48,12 @@ $(function() {
     var shrinkHeader = 100;
     var changeHeader = $(".video").outerHeight();
     var textHeader = $(".year_ani");
-    var greyheight = $(".grey_back").offset().top - 50;
+    var greyheight;
+    try {
+        greyheight = $(".grey_back").offset().top - 50;
+    } catch (error) {
+
+    }
     $(window).scroll(function() {
         var scroll = getCurrentScroll();
 
@@ -417,35 +422,6 @@ $('.policy_slide')
     });
 
 
-
-
-// $('.info_slider').on('init', function(event, slick, currentSlide) {
-//     const CurrentSlideDom = $(slick.$slides.get(currentSlide)).find(".title").eq(0);
-//     if (CurrentSlideDom.text().trim().length > 20) {
-//         var temp = CurrentSlideDom.text();
-//         var swithText = temp.trim().substr(0, 20) + "...";
-//         CurrentSlideDom.text(swithText);
-//     }
-// });
-
-
-
-
-// $('.info_slider')
-//     .on('afterChange', function(event, slick, currentSlide, nextSlide) {
-
-//         const CurrentSlideDom = $(slick.$slides.get(nextSlide)).find(".title").eq(0);
-//         if (CurrentSlideDom.text().trim().length > 20) {
-//             var temp = CurrentSlideDom.text();
-//             var swithText = temp.trim().substr(0, 20) + "...";
-//             CurrentSlideDom.text(swithText);
-//         }
-
-
-//     });
-
-
-
 try {
 
     var $slider = $('.productSlider');
@@ -559,6 +535,59 @@ try {
 
 }
 
+
+try {
+
+    var $slider = $('.worksDetail_box_slider');
+
+    if ($slider.length) {
+        var currentSlide;
+        var slidesCount;
+        var sliderCounter = document.createElement('div');
+        var sliderCounterDiv = document.createElement('div');
+        sliderCounter.classList.add('slider__counter');
+        sliderCounterDiv.classList.add('slider__counter_div');
+        var sliderSpan = document.createElement('span');
+        var sliderSpanTotal = document.createElement('span');
+        sliderCounter.appendChild(sliderCounterDiv).appendChild(sliderSpan);
+        sliderCounter.appendChild(sliderCounterDiv).appendChild(sliderSpanTotal);
+        sliderSpan.classList.add('slider__counter_span');
+        sliderSpanTotal.classList.add('slider__counter_total');
+
+
+        var updateSliderCounter = function(slick, currentIndex) {
+            currentSlide = slick.slickCurrentSlide() + 1;
+            slidesCount = slick.slideCount;
+
+            if (currentSlide < 10) {
+                $(sliderSpan).text('0' + currentSlide);
+            } else {
+                $(sliderSpan).text(currentSlide);
+
+            }
+            if (slidesCount < 10) {
+                $(sliderSpanTotal).text('/0' + slidesCount);
+            } else {
+                $(sliderSpanTotal).text('/' + slidesCount);
+
+            }
+        };
+
+        $slider.on('init', function(event, slick) {
+            $slider.append(sliderCounter);
+            updateSliderCounter(slick);
+        });
+
+        $slider.on('afterChange', function(event, slick, currentSlide) {
+            updateSliderCounter(slick, currentSlide);
+        });
+
+        $slider.slick();
+    }
+} catch (error) {
+
+}
+
 try {
 
 
@@ -619,7 +648,6 @@ function getOffset(el) {
 
 
 $(".productDetail_box_downloadAnchor a").on('click', function(event) {
-    console.log("click00");
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
         // Prevent default anchor click behavior
