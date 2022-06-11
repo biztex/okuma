@@ -181,6 +181,17 @@ header {
             }
             &.year {
                 margin-top: 50px;
+                &.works {
+                    align-items: baseline;
+                    @include media-screen($smart) {
+                        align-items: center;
+                    }
+                    .item_list_year {
+                        @include media-screen($smart) {
+                            justify-content: start;
+                        }
+                    }
+                }
             }
             display: flex;
             align-items: center;
@@ -1194,6 +1205,95 @@ header {
         background: transparent;
         @include media-screen($smart) {
             padding-top: 80px;
+        }
+    }
+    &.works {
+        margin-top: 0;
+        padding-top: 0;
+        .basic_step {
+            .function_content {
+                @include media-screen($smart) {
+                    display: flex;
+                    padding-top: 40px;
+                }
+                margin-top: 0;
+                .part {
+                    a {
+                        figure {
+                            position: relative;
+                            border: 2px solid #2772a8;
+                            span {
+                                background: url(../image/white.png);
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                width: 40px;
+                                height: 40px;
+                                background-color: #2772a8;
+                                position: absolute;
+                                display: block;
+                                bottom: 0;
+                                right: 0;
+                            }
+                            p {
+                                font-family: "Montserrat";
+                                font-weight: bold;
+                                font-size: 14px;
+                                letter-spacing: 0.2em;
+                                line-height: 48px;
+                                text-align: left;
+                                color: #2772a8;
+                                background: #f0f0ed;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                    .title {
+                        p {
+                            font-family: "Noto Sans JP";
+                            font-weight: 500;
+                            font-size: 16px;
+                            letter-spacing: 0.05em;
+                            line-height: 30px;
+                            text-align: left;
+                            color: #7c7c7c;
+                        }
+                    }
+                    .tag {
+                        margin-top: 16px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        p {
+                            font-family: "Noto Sans JP";
+                            font-weight: bold;
+                            font-size: 14px;
+                            letter-spacing: 0.02em;
+                            line-height: 32px;
+                            text-align: left;
+                            color: #2772a8;
+                            padding: 0 10px;
+                            border: 1px solid #2772a8;
+                        }
+                    }
+                }
+            }
+        }
+        .grey_back {
+            background: #EEEFF4;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            display: block;
+            top: 0;
+            z-index: -1;
+            clip-path: polygon(50% 15%, 0 0, 0 60%, 50% 76%, 100% 59%, 100% 0);
+            @include media-screen($smart) {
+                clip-path: polygon(50% 8%, 0 0, 0 60%, 50% 68%, 100% 59%, 100% 0);
+                height: 45vh;
+            }
         }
     }
     .basic_step {
@@ -2258,6 +2358,11 @@ header {
 }
 
 .manufacturing_keep {
+    &.works {
+        background: white;
+        z-index: 9;
+        position: relative;
+    }
     .link {
         max-width: 1080px;
         &.information {

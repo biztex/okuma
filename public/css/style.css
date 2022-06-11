@@ -2230,6 +2230,8 @@ footer {
   background: url("../image/company.png") no-repeat;
   background-size: cover;
   padding-bottom: 64px;
+  position: relative;
+  z-index: 4;
 }
 @media screen and (max-width: 500px) {
   footer {

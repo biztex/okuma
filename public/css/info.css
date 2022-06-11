@@ -2230,6 +2230,8 @@ footer {
   background: url("../image/company.png") no-repeat;
   background-size: cover;
   padding-bottom: 64px;
+  position: relative;
+  z-index: 4;
 }
 @media screen and (max-width: 500px) {
   footer {
@@ -2805,6 +2807,19 @@ header .header .menu_items .navigation span {
 }
 .search_filtering .category_items .item_part.year {
   margin-top: 50px;
+}
+.search_filtering .category_items .item_part.year.works {
+  align-items: baseline;
+}
+@media screen and (max-width: 500px) {
+  .search_filtering .category_items .item_part.year.works {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .search_filtering .category_items .item_part.year.works .item_list_year {
+    justify-content: start;
+  }
 }
 @media screen and (max-width: 500px) {
   .search_filtering .category_items .item_part {
@@ -3871,6 +3886,91 @@ header .header .menu_items .navigation span {
 @media screen and (max-width: 500px) {
   .policy_step.product {
     padding-top: 80px;
+  }
+}
+.policy_step.works {
+  margin-top: 0;
+  padding-top: 0;
+}
+.policy_step.works .basic_step .function_content {
+  margin-top: 0;
+}
+@media screen and (max-width: 500px) {
+  .policy_step.works .basic_step .function_content {
+    display: flex;
+    padding-top: 40px;
+  }
+}
+.policy_step.works .basic_step .function_content .part a figure {
+  position: relative;
+  border: 2px solid #2772a8;
+}
+.policy_step.works .basic_step .function_content .part a figure span {
+  background: url(../image/white.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-color: #2772a8;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+}
+.policy_step.works .basic_step .function_content .part a figure p {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  line-height: 48px;
+  text-align: left;
+  color: #2772a8;
+  background: #f0f0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.policy_step.works .basic_step .function_content .part .title p {
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #7c7c7c;
+}
+.policy_step.works .basic_step .function_content .part .tag {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.policy_step.works .basic_step .function_content .part .tag p {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  text-align: left;
+  color: #2772a8;
+  padding: 0 10px;
+  border: 1px solid #2772a8;
+}
+.policy_step.works .grey_back {
+  background: #EEEFF4;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: block;
+  top: 0;
+  z-index: -1;
+  clip-path: polygon(50% 15%, 0 0, 0 60%, 50% 76%, 100% 59%, 100% 0);
+}
+@media screen and (max-width: 500px) {
+  .policy_step.works .grey_back {
+    clip-path: polygon(50% 8%, 0 0, 0 60%, 50% 68%, 100% 59%, 100% 0);
+    height: 45vh;
   }
 }
 .policy_step .basic_step {
@@ -5023,6 +5123,11 @@ header .header .menu_items .navigation span {
   }
 }
 
+.manufacturing_keep.works {
+  background: white;
+  z-index: 9;
+  position: relative;
+}
 .manufacturing_keep .link {
   max-width: 1080px;
 }

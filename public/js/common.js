@@ -48,6 +48,7 @@ $(function() {
     var shrinkHeader = 100;
     var changeHeader = $(".video").outerHeight();
     var textHeader = $(".year_ani");
+    var greyheight = $(".grey_back").offset().top - 50;
     $(window).scroll(function() {
         var scroll = getCurrentScroll();
 
@@ -92,6 +93,19 @@ $(function() {
 
             }
         } catch (error) {
+
+        }
+
+
+        try {
+            if (scroll > greyheight) {
+                $(".grey_back").css({ "position": "fixed", "top": "91px" });
+            } else {
+                $(".grey_back").css({ "position": "absolute", "top": "0" });
+
+            }
+
+        } catch (err) {
 
         }
 
