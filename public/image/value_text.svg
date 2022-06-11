@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="528.789" height="566.327" viewBox="0 0 528.789 566.327">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_5017" data-name="Rectangle 5017" width="82.253" height="63.54" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_30266" data-name="Group 30266" transform="translate(-100.001 -4410)">
+    <g id="Group_30265" data-name="Group 30265">
+      <ellipse id="Ellipse_361" data-name="Ellipse 361" cx="213.165" cy="213.165" rx="213.165" ry="213.165" transform="translate(161.003 4480)" fill="none" stroke="#e1e1e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="Line_4624" data-name="Line 4624" y1="426.326" transform="translate(374.183 4480)" fill="none" stroke="#e1e1e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="Line_4625" data-name="Line 4625" x1="369.215" y1="213.162" transform="translate(189.574 4586.582)" fill="none" stroke="#e1e1e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="Line_4626" data-name="Line 4626" x1="369.215" y2="213.162" transform="translate(189.574 4586.582)" fill="none" stroke="#e1e1e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_90738" data-name="Path 90738" d="M293.108,180.938a70,70,0,1,1-70-70A70,70,0,0,1,293.108,180.938Z" transform="translate(150.313 4299.061)" fill="#e1e1e1"/>
+      <path id="Path_90740" data-name="Path 90740" d="M293.108,531.478a70,70,0,1,1-70-70A70,70,0,0,1,293.108,531.478Z" transform="translate(150.313 4374.849)" fill="#e1e1e1"/>
+      <path id="Path_90742" data-name="Path 90742" d="M141.315,268.573a70,70,0,1,1-70-70A70,70,0,0,1,141.315,268.573Z" transform="translate(98.686 4318.008)" fill="#e1e1e1"/>
+      <path id="Path_90744" data-name="Path 90744" d="M444.9,268.572a70,70,0,1,1-70-70A70,70,0,0,1,444.9,268.572Z" transform="translate(183.893 4326.776)" fill="#e1e1e1"/>
+      <path id="Path_90746" data-name="Path 90746" d="M141.315,443.84a70,70,0,1,1-70-70A70,70,0,0,1,141.315,443.84Z" transform="translate(98.686 4355.9)" fill="#e1e1e1"/>
+      <path id="Path_90748" data-name="Path 90748" d="M444.9,443.84a70,70,0,1,1-70-70A70,70,0,0,1,444.9,443.84Z" transform="translate(183.893 4367.868)" fill="#e1e1e1"/>
+      <g id="Group_30027" data-name="Group 30027" transform="translate(72.733 52.352)">
+        <text id="品質" transform="translate(301.434 4424.649)" font-size="20" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500" letter-spacing="0.04em"><tspan x="-20.4" y="0">品質</tspan></text>
+        <text id="quality" transform="translate(301.434 4449.378)" fill="#7c7c7c" font-size="14" font-family="Montserrat-Regular, Montserrat" letter-spacing="0.04em"><tspan x="-32.676" y="0">QUALITY</tspan></text>
+      </g>
+      <g id="Group_30024" data-name="Group 30024" transform="translate(72.733 128.131)">
+        <text id="挑戦" transform="translate(300.686 4775.195)" font-size="20" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500" letter-spacing="0.04em"><tspan x="-20.4" y="0">挑戦</tspan></text>
+        <text id="challenge" transform="translate(300.686 4799.924)" fill="#7c7c7c" font-size="14" font-family="Montserrat-Regular, Montserrat" letter-spacing="0.04em"><tspan x="-46.697" y="0">CHALLENGE</tspan></text>
+      </g>
+      <g id="Group_30026" data-name="Group 30026" transform="translate(20.313 72.293)">
+        <text id="コスト" transform="translate(149.688 4512.289)" font-size="20" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500" letter-spacing="0.04em"><tspan x="-30.8" y="0">コスト</tspan></text>
+        <text id="cost" transform="translate(149.688 4537.015)" fill="#7c7c7c" font-size="14" font-family="Montserrat-Regular, Montserrat" letter-spacing="0.04em"><tspan x="-19.894" y="0">COST</tspan></text>
+      </g>
+      <g id="Group_30028" data-name="Group 30028" transform="translate(105.35 81.061)">
+        <text id="スピード" transform="translate(453.223 4512.289)" font-size="20" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500" letter-spacing="0.04em"><tspan x="-41.2" y="0">スピード</tspan></text>
+        <text id="speed" transform="translate(453.223 4537.015)" fill="#7c7c7c" font-size="14" font-family="Montserrat-Regular, Montserrat" letter-spacing="0.04em"><tspan x="-25.529" y="0">SPEED</tspan></text>
+      </g>
+      <g id="Group_30025" data-name="Group 30025" transform="translate(20.359 109.188)">
+        <text id="デザイン" transform="translate(149.641 4687.556)" font-size="20" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500" letter-spacing="0.04em"><tspan x="-41.2" y="0">デザイン</tspan></text>
+        <text id="design" transform="translate(149.641 4712.279)" fill="#7c7c7c" font-size="14" font-family="Montserrat-Regular, Montserrat" letter-spacing="0.04em"><tspan x="-29.386" y="0">DESIGN</tspan></text>
+      </g>
+      <g id="Group_30023" data-name="Group 30023" transform="translate(105.566 121.156)">
+        <text id="技術" transform="translate(453.223 4687.556)" font-size="20" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500" letter-spacing="0.04em"><tspan x="-20.4" y="0">技術</tspan></text>
+        <text id="technology" transform="translate(453.223 4712.286)" fill="#7c7c7c" font-size="14" font-family="Montserrat-Regular, Montserrat" letter-spacing="0.04em"><tspan x="-53.235" y="0">TECHNOLOGY</tspan></text>
+      </g>
+    </g>
+    <g id="Group_30022" data-name="Group 30022" transform="translate(-281.333 -1095.588)">
+      <circle id="Ellipse_362" data-name="Ellipse 362" cx="89.752" cy="89.752" r="89.752" transform="translate(565 5699)" fill="#7c7c7c"/>
+      <g id="Group_30021" data-name="Group 30021" transform="translate(614.065 5756.441)" style="isolation: isolate">
+        <path id="Path_90068" data-name="Path 90068" d="M16.225,11.639H11.541V9H9.922v6.474h1.62v-2.3h4.683v2.3h1.639V9H16.225Z" transform="translate(0.406 0.369)" fill="#fff"/>
+        <path id="Path_90069" data-name="Path 90069" d="M26.486,9H24.108l-3.641,2.982V9H18.848v6.474h1.619V13.93l1.583-1.3,2.356,2.843h2.107L23.3,11.6Z" transform="translate(0.772 0.369)" fill="#fff"/>
+        <path id="Path_90070" data-name="Path 90070" d="M39.831,13.392,36.869,9H35.511v6.474h1.566v-3.3l2.256,3.3h.974l2.266-3.316v3.316h1.565V9H42.8Z" transform="translate(1.454 0.369)" fill="#fff"/>
+        <g id="Group_29078" data-name="Group 29078">
+          <g id="Group_29077" data-name="Group 29077" clip-path="url(#clip-path)">
+            <path id="Path_90071" data-name="Path 90071" d="M32.827,12.42a1.664,1.664,0,0,1-.317,1.037,1.266,1.266,0,0,1-.511.38,2.683,2.683,0,0,1-1.294.179,2.665,2.665,0,0,1-1.294-.179,1.267,1.267,0,0,1-.517-.38,1.677,1.677,0,0,1-.321-1.037V9H26.894v3.676a2.934,2.934,0,0,0,.558,1.824,2.451,2.451,0,0,0,.9.665,5.111,5.111,0,0,0,2.35.309,5.079,5.079,0,0,0,2.345-.309,2.421,2.421,0,0,0,.906-.665,2.921,2.921,0,0,0,.556-1.824V9H32.827Z" transform="translate(1.101 0.369)" fill="#fff"/>
+            <path id="Path_90072" data-name="Path 90072" d="M49.525,9H48.106l-3.638,6.474H46.2l.591-1.077h3.991l.619,1.077h1.749ZM47.6,13l1.2-2.146L50,13Z" transform="translate(1.821 0.369)" fill="#fff"/>
+            <path id="Path_90073" data-name="Path 90073" d="M7.761,9.31A9.669,9.669,0,0,0,4.65,9a9.689,9.689,0,0,0-3.11.31,2.359,2.359,0,0,0-.908.665A2.952,2.952,0,0,0,.076,11.8v.876A2.947,2.947,0,0,0,.632,14.5a2.446,2.446,0,0,0,.908.665,9.7,9.7,0,0,0,3.11.308,9.682,9.682,0,0,0,3.111-.308A2.442,2.442,0,0,0,8.67,14.5a2.947,2.947,0,0,0,.558-1.824V11.8A2.952,2.952,0,0,0,8.67,9.975a2.355,2.355,0,0,0-.909-.665m-.128,2.926v.189A1.694,1.694,0,0,1,7.3,13.493a1.311,1.311,0,0,1-.531.388,7.73,7.73,0,0,1-2.12.187,7.718,7.718,0,0,1-2.117-.187A1.363,1.363,0,0,1,2,13.493a1.733,1.733,0,0,1-.324-1.067v-.375A1.749,1.749,0,0,1,2,10.978a1.4,1.4,0,0,1,.535-.388,7.766,7.766,0,0,1,2.117-.181,7.778,7.778,0,0,1,2.12.181,1.34,1.34,0,0,1,.531.388,1.709,1.709,0,0,1,.332,1.073Z" transform="translate(0.003 0.369)" fill="#fff"/>
+            <path id="Path_90074" data-name="Path 90074" d="M43.219,30.224c16.407,1.636,30.61,15.553,30.61,32.086h6.654c0-17.637-15.744-32.257-33.711-32.257-1.123,0-2.456.062-3.553.171" transform="translate(1.77 1.231)" fill="#fff"/>
+            <path id="Path_90075" data-name="Path 90075" d="M43.219,31.454C59.626,29.816,73.829,16.538,73.829,0h6.654c0,17.64-15.744,31.621-33.711,31.621-1.123,0-2.456-.057-3.553-.167" transform="translate(1.77)" fill="#fff"/>
+            <path id="Path_90076" data-name="Path 90076" d="M69.876,62.267c0-17.93-15.645-32.457-34.939-32.457S0,44.336,0,62.267H6.779c0-17.455,12.61-31.608,28.158-31.608S63.093,44.812,63.093,62.267Z" transform="translate(0 1.221)" fill="#fff"/>
+            <path id="Path_90077" data-name="Path 90077" d="M40.329,31.535c-15.258,3.8-21.6,16.448-21.6,31.952H12.069c0-15.346,10.669-29.409,23.442-32.214S62.66,15.614,62.66,0h6.654c0,15.456-13.728,27.73-28.985,31.535" transform="translate(0.494)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

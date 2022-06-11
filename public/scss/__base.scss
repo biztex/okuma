@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+$smart: 500px;
+@mixin media-screen($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}

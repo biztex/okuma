@@ -1,1 +1,36 @@
 # okuma
+
+##  sass compiler
+
+At first 
+
+- npm init
+
+And next
+
+- npm install sass-compiler --save-dev
+
+- add to package.json as follow
+
+--------------------
+    {
+        "name": "sass-compile",
+        "version": "1.0.0",
+        "description": "A simple sass compile config.",
+        "main": "index.js",
+        "scripts": {
+            "sass-dev": "sass --watch --update --style=expanded public/scss:public/css",
+            "sass-prod": "sass --no-source-map --style=compressed public/scss:public/css"
+        },
+        "author": "Adam",
+        "license": "ISC",
+        "devDependencies": {
+            "sass": "^1.52.3",
+            "sass-compiler": "^1.2.3"
+        }
+    }
+
+---------------------
+
+
+
