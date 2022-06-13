@@ -4100,6 +4100,21 @@ header .header .menu_items .navigation span {
     color: #000;
   }
 }
+.policy_step .basic_step .factory_content {
+  margin-top: 100px;
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.policy_step .basic_step .factory_content p {
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+}
 .policy_step .step_header .title {
   display: flex;
   align-items: center;
@@ -5123,6 +5138,208 @@ header .header .menu_items .navigation span {
 @media screen and (max-width: 500px) {
   .policy_step .showrrom_content .showroom_sys .show_slider .slider_item .slider .pic {
     height: auto;
+  }
+}
+
+.facility {
+  margin-top: 100px;
+}
+.facility .facility_image {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
+}
+.facility_box {
+  padding: 60px 80px;
+  margin-top: -90px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 1080px;
+}
+.facility_box .number {
+  position: absolute;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 80px;
+  letter-spacing: 0.02em;
+  line-height: 60px;
+  text-align: left;
+  color: #fff;
+  top: -60px;
+  left: 0;
+}
+.facility_box .name {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  line-height: 60px;
+  text-align: left;
+  color: #000;
+}
+.facility_box .subtitle {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  text-align: left;
+  color: #000;
+}
+.facility_box_tag {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+.facility_box_tag p {
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  line-height: 28px;
+  text-align: left;
+  color: #fff;
+  background: #2772a8;
+  padding: 6px 15px;
+}
+.facility_box .line {
+  background-color: #000;
+  width: 126px;
+  margin-top: 27px;
+  display: block;
+  height: 2px;
+  position: relative;
+}
+.facility_box_exp {
+  margin-top: 60px;
+}
+.facility_box_exp table,
+.facility_box_exp tr {
+  width: 100%;
+  border-collapse: separate;
+}
+.facility_box_exp table td:first-child,
+.facility_box_exp tr td:first-child {
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 28px;
+  text-align: left;
+  color: #7c7c7c;
+}
+.facility_box_exp table td:last-child,
+.facility_box_exp tr td:last-child {
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 28px;
+  text-align: left;
+  color: #000;
+}
+.facility_box .products_gallery {
+  font-family: "Noto Sans JP";
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 100px;
+  border-bottom: 1px solid #000;
+}
+.facility_box .products_gallery span {
+  font-family: "Montserrat";
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  text-align: left;
+  color: #000;
+}
+.facility_box .function_content {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+@media screen and (max-width: 500px) {
+  .facility_box .function_content {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+    gap: 40px;
+  }
+}
+.facility_box .function_content .part {
+  width: 280px;
+}
+@media screen and (max-width: 500px) {
+  .facility_box .function_content .part {
+    max-width: 310px;
+    width: 100%;
+  }
+  .facility_box .function_content .part img {
+    width: 100%;
+  }
+}
+.facility_box .function_content .part:empty {
+  height: 0;
+}
+.facility_box .function_content .part a figure {
+  overflow: hidden;
+}
+.facility_box .function_content .part a figure img {
+  transition: all 0.3s ease-in-out;
+}
+.facility_box .function_content .part a:hover figure img {
+  transform: scale(1.1);
+}
+.facility_box .function_content .part a .title {
+  margin-top: 20px;
+}
+@media screen and (max-width: 500px) {
+  .facility_box .function_content .part a .title {
+    margin-top: 10px;
+  }
+}
+.facility_box .function_content .part a .title h3 {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+}
+@media screen and (max-width: 500px) {
+  .facility_box .function_content .part a .title h3 {
+    font-family: "Noto Sans JP";
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 24px;
+    text-align: left;
+    color: #000;
+  }
+}
+.facility_box .function_content .part a .title p {
+  font-weight: normal;
+  font-size: 15px;
+  font-family: "Noto Sans JP";
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+}
+@media screen and (max-width: 500px) {
+  .facility_box .function_content .part a .title p {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 24px;
+    text-align: left;
+    color: #000;
   }
 }
 

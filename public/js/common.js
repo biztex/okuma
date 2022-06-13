@@ -647,7 +647,7 @@ function getOffset(el) {
 }
 
 
-$(".productDetail_box_downloadAnchor a").on('click', function(event) {
+$(".productDetail_box_downloadAnchor a, .basic_policy_div a").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
         // Prevent default anchor click behavior
