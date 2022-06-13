@@ -32,6 +32,11 @@ header {
     background: white;
     &.worksdetail {
         background: #e1e1e1;
+        .info_title {
+            @include media-screen($smart) {
+                height: 385px;
+            }
+        }
     }
     .grey {
         width: 37.5%;
@@ -71,15 +76,6 @@ header {
                 }
             }
         }
-        .infomation_title {
-            top: 60%;
-            transform: translateY(-50%);
-            left: 100px;
-            @include media-screen($smart) {
-                transform: translate(-50%, -50%);
-                left: 50%;
-            }
-        }
     }
     .infomation_title {
         position: absolute;
@@ -87,13 +83,16 @@ header {
         transform: translateY(-50%);
         left: 100px;
         @include media-screen($smart) {
-            transform: translate(-50%, -50%);
+            margin-top: 60px;
             left: 50%;
+            transform: translateX(-50%);
+            top: calc(var(--img_hi)/2 - var(--text_hi)/2);
         }
         &.inspection {
             h2 {
                 @include media-screen($smart) {
                     text-align: center;
+                    text-indent: 0.5em;
                 }
             }
         }
@@ -108,6 +107,9 @@ header {
             width: fit-content;
             background: #2772A8;
             text-transform: uppercase;
+            @include media-screen($smart) {
+                text-indent: 0.5em;
+            }
         }
         p {
             font-family: "Noto Sans JP";
@@ -125,24 +127,27 @@ header {
     }
 }
 
+.drawing {
+    position: absolute;
+    right: -150px;
+    top: 650px;
+    z-index: -1;
+    &.active {
+        position: fixed;
+        top: 0;
+    }
+}
+
 .search_filtering {
     padding: 100px 0;
     max-width: 1080px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden;
+    position: relative;
     @include media-screen($smart) {
         padding: 41px 0;
-    }
-    .drawing {
-        position: absolute;
-        right: -150px;
-        top: 650px;
-        z-index: -1;
-        &.active {
-            position: fixed;
-            top: 0;
-        }
     }
     h2 {
         font-family: "Montserrat";
@@ -1250,6 +1255,15 @@ header {
                                 justify-content: center;
                                 align-items: center;
                             }
+                            .nonimage {
+                                transform: none;
+                                margin-right: 10px;
+                            }
+                            &:hover {
+                                .nonimage {
+                                    transform: none;
+                                }
+                            }
                         }
                     }
                     .title {
@@ -1665,6 +1679,17 @@ header {
                         line-height: 60px;
                         text-align: left;
                         color: #2772a8;
+                        display: flex;
+                        align-items: flex-end;
+                        gap: 10px;
+                        &::after {
+                            content: '';
+                            width: 100%;
+                            height: 1px;
+                            display: block;
+                            background: #2772A8;
+                            margin-bottom: 15px;
+                        }
                     }
                     &:last-of-type {
                         font-family: "Noto Sans JP";
@@ -2759,8 +2784,9 @@ header {
     .productSlider {
         height: 80vh;
         @include media-screen(768px) {
-            height: 86vh;
+            height: 100%;
             margin-bottom: 15px;
+            padding-bottom: 53px;
         }
         img {
             height: 80vh;
@@ -2786,8 +2812,8 @@ header {
                 transform: translateX(-38%);
             }
             @include media-screen($smart) {
-                left: 27%;
-                transform: translateX(-27%);
+                left: 32%;
+                transform: translateX(-32%);
             }
         }
         .slider__counter {
@@ -2838,9 +2864,9 @@ header {
                 transform: translateX(38%) rotate(180deg);
             }
             @include media-screen($smart) {
-                right: 27%;
+                right: 32%;
                 left: auto;
-                transform: translateX(27%) rotate(180deg);
+                transform: translateX(32%) rotate(180deg);
             }
         }
     }
@@ -3167,6 +3193,10 @@ header {
             margin-top: 80px;
             padding: 45px;
             border: 3px solid #ececec;
+            @include media-screen($smart) {
+                margin-top: 20px;
+                padding: 20px;
+            }
             h2 {
                 font-family: "Noto Sans JP";
                 font-weight: 500;
@@ -3176,6 +3206,15 @@ header {
                 text-align: left;
                 color: #000;
                 margin-bottom: 10px;
+                @include media-screen($smart) {
+                    font-family: "Noto Sans JP";
+                    font-weight: bold;
+                    font-size: 12px;
+                    letter-spacing: 0.02em;
+                    line-height: 27px;
+                    text-align: left;
+                    color: #000;
+                }
             }
         }
         &_abundant {
@@ -3280,11 +3319,12 @@ header {
         @include media-screen(1280px) {
             font-family: "PristineScript";
             font-weight: normal;
-            font-size: (95/1280 * 100vw);
+            width: calc(600/1280 * 100vw);
             letter-spacing: 0.04em;
             line-height: 72px;
             text-align: left;
             color: #ececec;
+            top: calc(292/1280 * 100vw);
         }
         @include media-screen($smart) {
             font-size: 36px;
@@ -3541,6 +3581,7 @@ header {
                                     width: fit-content;
                                     line-height: 22px;
                                     margin-top: 10px;
+                                    margin-bottom: 14px;
                                 }
                             }
                         }
@@ -3692,7 +3733,7 @@ header {
 #g {
     stroke: #fff;
     fill: transparent;
-    @include media-screen(1280px) {
+    @include media-screen(1180px) {
         stroke: #ececec;
     }
 }
@@ -3700,115 +3741,115 @@ header {
 #A {
     stroke-dasharray: 283px;
     stroke-dashoffset: -283px;
-    animation: line-draw 2s 0.4s forwards;
+    animation: line-draw 1s 0.4s forwards;
 }
 
 #n {
     stroke-dasharray: 188px;
     stroke-dashoffset: -188px;
-    animation: line-draw 2s 2.4s forwards;
+    animation: line-draw 1s 1.4s forwards;
 }
 
 #a {
     stroke-dasharray: 175px;
     stroke-dashoffset: -175px;
-    animation: line-draw 2s 4.4s forwards;
+    animation: line-draw 1s 2.4s forwards;
 }
 
 #p {
     stroke-dasharray: 212px;
     stroke-dashoffset: -212px;
-    animation: line-draw 1.5s 6.4s forwards;
+    animation: line-draw 1s 3.4s forwards;
 }
 
 #a_1_ {
     stroke-dasharray: 175px;
     stroke-dashoffset: -175px;
-    animation: line-draw 2s 8.4s forwards;
+    animation: line-draw 1s 4.4s forwards;
 }
 
 #r {
     stroke-dasharray: 93px;
     stroke-dashoffset: -93px;
-    animation: line-draw 2s 10.4s forwards;
+    animation: line-draw 1s 5.4s forwards;
 }
 
 #t {
     stroke-dasharray: 168px;
     stroke-dashoffset: -168px;
-    animation: line-draw 2s 12.4s forwards;
+    animation: line-draw 1s 6.4s forwards;
 }
 
 #m {
     stroke-dasharray: 240px;
     stroke-dashoffset: -240px;
-    animation: line-draw 2s 14.4s forwards;
+    animation: line-draw 1s 7.4s forwards;
 }
 
 #e {
     stroke-dasharray: 144px;
     stroke-dashoffset: -144px;
-    animation: line-draw 2s 16.4s forwards;
+    animation: line-draw 1s 8.4s forwards;
 }
 
 #n_1_ {
     stroke-dasharray: 188px;
     stroke-dashoffset: -188px;
-    animation: line-draw 2s 18.4s forwards;
+    animation: line-draw 1s 9.4s forwards;
 }
 
 #t_1_ {
     stroke-dasharray: 168px;
     stroke-dashoffset: -168px;
-    animation: line-draw 2s 20.4s forwards;
+    animation: line-draw 1s 10.4s forwards;
 }
 
 #b {
     stroke-dasharray: 235px;
     stroke-dashoffset: -235px;
-    animation: line-draw 2s 22.4s forwards;
+    animation: line-draw 1s 11.4s forwards;
 }
 
 #u {
     stroke-dasharray: 173px;
     stroke-dashoffset: -173px;
-    animation: line-draw 2s 24.4s forwards;
+    animation: line-draw 1s 12.4s forwards;
 }
 
 #i {
     stroke-dasharray: 100px;
     stroke-dashoffset: -100px;
-    animation: line-draw 2s 26.4s forwards;
+    animation: line-draw 1s 13.4s forwards;
 }
 
 #l {
     stroke-dasharray: 183px;
     stroke-dashoffset: -183px;
-    animation: line-draw 2s 28.4s forwards;
+    animation: line-draw 1s 14.4s forwards;
 }
 
 #d {
     stroke-dasharray: 259px;
     stroke-dashoffset: -259px;
-    animation: line-draw 2s 30.4s forwards;
+    animation: line-draw 1s 15.4s forwards;
 }
 
 #i_1_ {
     stroke-dasharray: 100px;
     stroke-dashoffset: -100px;
-    animation: line-draw 2s 32.4s forwards;
+    animation: line-draw 1s 16.4s forwards;
 }
 
 #n_2_ {
     stroke-dasharray: 188px;
     stroke-dashoffset: -188px;
-    animation: line-draw 2s 34.4s forwards;
+    animation: line-draw 1s 17.4s forwards;
 }
 
 #g {
     stroke-dasharray: 245px;
     stroke-dashoffset: -245px;
-    animation: line-draw 2s 36.4s forwards;
+    animation: line-draw 1s 18.4s forwards;
 }
 
 @keyframes line-draw {

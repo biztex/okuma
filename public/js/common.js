@@ -11,27 +11,49 @@ $(document).ready(function() {
 
 
     try {
-        $(".search_filtering .item_list a").click(function(e) {
-
-            localStorage.setItem("search", $(this).data('id'));
+        $(".search_filtering.column .item_list a").click(function(e) {
+            localStorage.setItem("searchColumn", $(this).data('id'));
         });
-        $(".search_filtering .item_list_year a").click(function(e) {
-
+        $(".search_filtering.product .item_list a").click(function(e) {
+            localStorage.setItem("searchProducts", $(this).data('id'));
+        });
+        $(".search_filtering.work .item_list a").click(function(e) {
+            localStorage.setItem("searchWork", $(this).data('id'));
+        });
+        $(".search_filtering.product .item_list_year a").click(function(e) {
             localStorage.setItem("search_year", $(this).data('id'));
         });
+        $(".search_filtering.work .item_list_year a").click(function(e) {
+            localStorage.setItem("search_category", $(this).data('id'));
+        });
 
     } catch (error) {
 
     }
-
 
     try {
-        $(".search_filtering .item_list a:nth-child(" + localStorage.getItem("search") + ")").addClass("active");
-        $(".search_filtering .item_list_year a:nth-child(" + localStorage.getItem("search_year") + ")").addClass("active");
+        $(".search_filtering.column .item_list a:nth-child(" + localStorage.getItem("searchColumn") + ")").addClass("active");
+    } catch (error) {}
+    try {
+        $(".search_filtering.product .item_list a:nth-child(" + localStorage.getItem("searchProducts") + ")").addClass("active");
+    } catch (err) {}
 
+    try {
+        $(".search_filtering.product .item_list_year a:nth-child(" + localStorage.getItem("search_year") + ")").addClass("active");
     } catch (error) {
 
     }
+    try {
+        $(".search_filtering.work .item_list a:nth-child(" + localStorage.getItem("searchWork") + ")").addClass("active");
+    } catch (error) {
+
+    }
+    try {
+        $(".search_filtering.work .item_list_year a:nth-child(" + localStorage.getItem("search_category") + ")").addClass("active");
+    } catch (error) {
+
+    }
+
 
 
 
@@ -588,6 +610,24 @@ try {
 
 }
 
+function setImgHeight() {
+    let win;
+    win = window.innerWidth;
+    let hi;
+    let hi_2;
+
+    if (win < 550) {
+        hi = document.querySelector(".information_banner .info_title").offsetHeight;
+        hi_2 = document.querySelector(".information_banner .infomation_title").offsetHeight;
+    }
+    document.documentElement.style.setProperty('--img_hi', `${hi}px`);
+    document.documentElement.style.setProperty('--text_hi', `${hi_2}px`);
+
+}
+setImgHeight();
+
+// 3.ブラウザのサイズが変更された時・画面の向きを変えた時に再計算する
+window.addEventListener('resize', setWidth);
 try {
 
 
@@ -597,6 +637,8 @@ try {
         let vw;
         vw = proBox.offsetWidth;
 
+
+
         let win;
         win = window.innerWidth;
 
@@ -604,6 +646,7 @@ try {
         rl = proBox.offsetLeft;
 
         let rt;
+
         if (win < vw) {
             rt = vw - (win / vw) * 200;
 
@@ -623,9 +666,7 @@ try {
 
     // 3.ブラウザのサイズが変更された時・画面の向きを変えた時に再計算する
     window.addEventListener('resize', setWidth);
-} catch (error) {
-
-}
+} catch (error) {}
 
 jQuery(document).ready(function($) {
     'use strict';

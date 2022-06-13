@@ -246,6 +246,7 @@ img {
 html,
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 /* 表示切り替え */
@@ -2641,6 +2642,11 @@ header .header .menu_items .navigation span {
 .information_banner.worksdetail {
   background: #e1e1e1;
 }
+@media screen and (max-width: 500px) {
+  .information_banner.worksdetail .info_title {
+    height: 385px;
+  }
+}
 .information_banner .grey {
   width: 37.5%;
   height: 650px;
@@ -2684,17 +2690,6 @@ header .header .menu_items .navigation span {
     object-position: center;
   }
 }
-.information_banner.infomation_detail .infomation_title {
-  top: 60%;
-  transform: translateY(-50%);
-  left: 100px;
-}
-@media screen and (max-width: 500px) {
-  .information_banner.infomation_detail .infomation_title {
-    transform: translate(-50%, -50%);
-    left: 50%;
-  }
-}
 .information_banner .infomation_title {
   position: absolute;
   top: 50%;
@@ -2703,13 +2698,16 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 500px) {
   .information_banner .infomation_title {
-    transform: translate(-50%, -50%);
+    margin-top: 60px;
     left: 50%;
+    transform: translateX(-50%);
+    top: calc(var(--img_hi) / 2 - var(--text_hi) / 2);
   }
 }
 @media screen and (max-width: 500px) {
   .information_banner .infomation_title.inspection h2 {
     text-align: center;
+    text-indent: 0.5em;
   }
 }
 .information_banner .infomation_title h2 {
@@ -2723,6 +2721,11 @@ header .header .menu_items .navigation span {
   width: fit-content;
   background: #2772A8;
   text-transform: uppercase;
+}
+@media screen and (max-width: 500px) {
+  .information_banner .infomation_title h2 {
+    text-indent: 0.5em;
+  }
 }
 .information_banner .infomation_title p {
   font-family: "Noto Sans JP";
@@ -2740,27 +2743,30 @@ header .header .menu_items .navigation span {
   }
 }
 
+.drawing {
+  position: absolute;
+  right: -150px;
+  top: 650px;
+  z-index: -1;
+}
+.drawing.active {
+  position: fixed;
+  top: 0;
+}
+
 .search_filtering {
   padding: 100px 0;
   max-width: 1080px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   .search_filtering {
     padding: 41px 0;
   }
-}
-.search_filtering .drawing {
-  position: absolute;
-  right: -150px;
-  top: 650px;
-  z-index: -1;
-}
-.search_filtering .drawing.active {
-  position: fixed;
-  top: 0;
 }
 .search_filtering h2 {
   font-family: "Montserrat";
@@ -3933,6 +3939,13 @@ header .header .menu_items .navigation span {
   justify-content: center;
   align-items: center;
 }
+.policy_step.works .basic_step .function_content .part a figure .nonimage {
+  transform: none;
+  margin-right: 10px;
+}
+.policy_step.works .basic_step .function_content .part a figure:hover .nonimage {
+  transform: none;
+}
 .policy_step.works .basic_step .function_content .part .title p {
   font-family: "Noto Sans JP";
   font-weight: 500;
@@ -4374,6 +4387,17 @@ header .header .menu_items .navigation span {
   line-height: 60px;
   text-align: left;
   color: #2772a8;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.policy_step .inspection_container .flex_part .item p:first-of-type::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: #2772A8;
+  margin-bottom: 15px;
 }
 .policy_step .inspection_container .flex_part .item p:last-of-type {
   font-family: "Noto Sans JP";
@@ -5548,8 +5572,9 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 768px) {
   .productDetail .productSlider {
-    height: 86vh;
+    height: 100%;
     margin-bottom: 15px;
+    padding-bottom: 53px;
   }
 }
 .productDetail .productSlider img {
@@ -5580,8 +5605,8 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 500px) {
   .productDetail .productSlider .slick-prev {
-    left: 27%;
-    transform: translateX(-27%);
+    left: 32%;
+    transform: translateX(-32%);
   }
 }
 .productDetail .productSlider .slider__counter {
@@ -5638,9 +5663,9 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 500px) {
   .productDetail .productSlider .slick-next {
-    right: 27%;
+    right: 32%;
     left: auto;
-    transform: translateX(27%) rotate(180deg);
+    transform: translateX(32%) rotate(180deg);
   }
 }
 .productDetail_box {
@@ -5992,6 +6017,12 @@ header .header .menu_items .navigation span {
   padding: 45px;
   border: 3px solid #ececec;
 }
+@media screen and (max-width: 500px) {
+  .productDetail_box_sevenTypeBox {
+    margin-top: 20px;
+    padding: 20px;
+  }
+}
 .productDetail_box_sevenTypeBox h2 {
   font-family: "Noto Sans JP";
   font-weight: 500;
@@ -6001,6 +6032,17 @@ header .header .menu_items .navigation span {
   text-align: left;
   color: #000;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 500px) {
+  .productDetail_box_sevenTypeBox h2 {
+    font-family: "Noto Sans JP";
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    line-height: 27px;
+    text-align: left;
+    color: #000;
+  }
 }
 .productDetail_box_abundant {
   margin-top: 100px;
@@ -6105,11 +6147,12 @@ header .header .menu_items .navigation span {
   .worksDetail .eff_text {
     font-family: "PristineScript";
     font-weight: normal;
-    font-size: 7.421875vw;
+    width: 46.875vw;
     letter-spacing: 0.04em;
     line-height: 72px;
     text-align: left;
     color: #ececec;
+    top: 22.8125vw;
   }
 }
 @media screen and (max-width: 500px) {
@@ -6406,6 +6449,7 @@ header .header .menu_items .navigation span {
     width: fit-content;
     line-height: 22px;
     margin-top: 10px;
+    margin-bottom: 14px;
   }
 }
 .worksDetail_box_info table tr:last-of-type td:first-of-type {
@@ -6549,7 +6593,7 @@ header .header .menu_items .navigation span {
   stroke: #fff;
   fill: transparent;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1180px) {
   #A,
 #p,
 #a,
@@ -6580,115 +6624,115 @@ header .header .menu_items .navigation span {
 #A {
   stroke-dasharray: 283px;
   stroke-dashoffset: -283px;
-  animation: line-draw 2s 0.4s forwards;
+  animation: line-draw 1s 0.4s forwards;
 }
 
 #n {
   stroke-dasharray: 188px;
   stroke-dashoffset: -188px;
-  animation: line-draw 2s 2.4s forwards;
+  animation: line-draw 1s 1.4s forwards;
 }
 
 #a {
   stroke-dasharray: 175px;
   stroke-dashoffset: -175px;
-  animation: line-draw 2s 4.4s forwards;
+  animation: line-draw 1s 2.4s forwards;
 }
 
 #p {
   stroke-dasharray: 212px;
   stroke-dashoffset: -212px;
-  animation: line-draw 1.5s 6.4s forwards;
+  animation: line-draw 1s 3.4s forwards;
 }
 
 #a_1_ {
   stroke-dasharray: 175px;
   stroke-dashoffset: -175px;
-  animation: line-draw 2s 8.4s forwards;
+  animation: line-draw 1s 4.4s forwards;
 }
 
 #r {
   stroke-dasharray: 93px;
   stroke-dashoffset: -93px;
-  animation: line-draw 2s 10.4s forwards;
+  animation: line-draw 1s 5.4s forwards;
 }
 
 #t {
   stroke-dasharray: 168px;
   stroke-dashoffset: -168px;
-  animation: line-draw 2s 12.4s forwards;
+  animation: line-draw 1s 6.4s forwards;
 }
 
 #m {
   stroke-dasharray: 240px;
   stroke-dashoffset: -240px;
-  animation: line-draw 2s 14.4s forwards;
+  animation: line-draw 1s 7.4s forwards;
 }
 
 #e {
   stroke-dasharray: 144px;
   stroke-dashoffset: -144px;
-  animation: line-draw 2s 16.4s forwards;
+  animation: line-draw 1s 8.4s forwards;
 }
 
 #n_1_ {
   stroke-dasharray: 188px;
   stroke-dashoffset: -188px;
-  animation: line-draw 2s 18.4s forwards;
+  animation: line-draw 1s 9.4s forwards;
 }
 
 #t_1_ {
   stroke-dasharray: 168px;
   stroke-dashoffset: -168px;
-  animation: line-draw 2s 20.4s forwards;
+  animation: line-draw 1s 10.4s forwards;
 }
 
 #b {
   stroke-dasharray: 235px;
   stroke-dashoffset: -235px;
-  animation: line-draw 2s 22.4s forwards;
+  animation: line-draw 1s 11.4s forwards;
 }
 
 #u {
   stroke-dasharray: 173px;
   stroke-dashoffset: -173px;
-  animation: line-draw 2s 24.4s forwards;
+  animation: line-draw 1s 12.4s forwards;
 }
 
 #i {
   stroke-dasharray: 100px;
   stroke-dashoffset: -100px;
-  animation: line-draw 2s 26.4s forwards;
+  animation: line-draw 1s 13.4s forwards;
 }
 
 #l {
   stroke-dasharray: 183px;
   stroke-dashoffset: -183px;
-  animation: line-draw 2s 28.4s forwards;
+  animation: line-draw 1s 14.4s forwards;
 }
 
 #d {
   stroke-dasharray: 259px;
   stroke-dashoffset: -259px;
-  animation: line-draw 2s 30.4s forwards;
+  animation: line-draw 1s 15.4s forwards;
 }
 
 #i_1_ {
   stroke-dasharray: 100px;
   stroke-dashoffset: -100px;
-  animation: line-draw 2s 32.4s forwards;
+  animation: line-draw 1s 16.4s forwards;
 }
 
 #n_2_ {
   stroke-dasharray: 188px;
   stroke-dashoffset: -188px;
-  animation: line-draw 2s 34.4s forwards;
+  animation: line-draw 1s 17.4s forwards;
 }
 
 #g {
   stroke-dasharray: 245px;
   stroke-dashoffset: -245px;
-  animation: line-draw 2s 36.4s forwards;
+  animation: line-draw 1s 18.4s forwards;
 }
 
 @keyframes line-draw {

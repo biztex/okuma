@@ -246,6 +246,7 @@ img {
 html,
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 /* 表示切り替え */
