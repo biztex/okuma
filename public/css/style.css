@@ -606,12 +606,12 @@ header .header .menu_items .menu_item_link .menu_link_inner:hover span:last-chil
 header .header .menu_items .menu_item_link .menu_link_inner span {
   position: absolute;
   overflow: hidden;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   transition: top 0.4s ease-out;
   font-size: 16px;
-  padding: 5px;
+  padding: 5px 0;
   font-weight: 600;
 }
 header .header .menu_items .menu_item_link .menu_link_inner span:first-child {
@@ -626,6 +626,9 @@ header .header .menu_items .menu_item_link .menu_link_inner span.en {
 header .header .menu_items .menu_item_link .menu_link_inner span.jp {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
+}
+header .header .menu_items .menu_item_link .menu_link_inner span.jp.contact {
+  border-bottom: 2px solid #2272a8;
 }
 header .header .menu_items .navigation {
   width: 40px;
@@ -899,6 +902,11 @@ header .header .menu_items .navigation span:last-of-type {
   margin-top: 138px;
   justify-content: flex-end;
   margin-right: 0;
+  position: relative;
+  z-index: 5;
+  width: fit-content;
+  padding: 10px 20px;
+  margin-left: auto;
 }
 .century .company_link img {
   margin-left: 10px;
@@ -1306,6 +1314,7 @@ header .header .menu_items .navigation span:last-of-type {
   width: fit-content;
   margin-left: auto;
   padding: 10px 20px;
+  position: relative;
 }
 .policy .policy_slide .slide .content .policy_link:hover, .policy .policy_slide .slide .content .policy_link:focus {
   outline: 0;
@@ -2514,11 +2523,17 @@ footer .footer .address .fo_logo .copy {
 .top-right:before {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 3;
 }
 
 .tech_link.right-bottom::before,
 .tech_link.right-bottom::after {
+  background: #000;
+  transition: all 1s ease 0s;
+}
+
+.company_link.right-bottom::before,
+.company_link.right-bottom::after {
   background: #000;
   transition: all 1s ease 0s;
 }
@@ -2541,7 +2556,7 @@ footer .footer .address .fo_logo .copy {
 .right-bottom:before {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   width: 3px;
   height: 0px;
   top: 0;

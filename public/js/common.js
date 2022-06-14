@@ -11,6 +11,9 @@ $(document).ready(function() {
 
 
     try {
+        $(".search_filtering.info .item_list a").click(function(e) {
+            localStorage.setItem("searchInfo", $(this).data('id'));
+        });
         $(".search_filtering.column .item_list a").click(function(e) {
             localStorage.setItem("searchColumn", $(this).data('id'));
         });
@@ -31,6 +34,9 @@ $(document).ready(function() {
 
     }
 
+    try {
+        $(".search_filtering.info .item_list a:nth-child(" + localStorage.getItem("searchInfo") + ")").addClass("active");
+    } catch (error) {}
     try {
         $(".search_filtering.column .item_list a:nth-child(" + localStorage.getItem("searchColumn") + ")").addClass("active");
     } catch (error) {}
@@ -671,7 +677,10 @@ try {
 jQuery(document).ready(function($) {
     'use strict';
     try {
-        $.Scrollax();
+        if ($(window).width() > 600) {
+            $.Scrollax();
+
+        }
 
     } catch (error) {
 

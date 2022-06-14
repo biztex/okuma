@@ -107,6 +107,7 @@ header {
             width: fit-content;
             background: #2772A8;
             text-transform: uppercase;
+            text-indent: 0.5em;
             @include media-screen($smart) {
                 text-indent: 0.5em;
             }
@@ -415,6 +416,7 @@ header {
                 mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
                 mask-repeat: no-repeat;
                 mask-size: 51% 51%;
+                clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
                 .image_part {
                     .date {
                         font-family: "Montserrat";
@@ -999,6 +1001,26 @@ header {
             }
         }
     }
+    &.company {
+        height: auto;
+        .basic_policy_div {
+            flex-wrap: wrap;
+            gap: 30px 60px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+            a {
+                width: 225px;
+            }
+            @include media-screen($smart) {
+                flex-wrap: wrap;
+                gap: 30px 0;
+                justify-content: space-between;
+                a {
+                    width: 150px;
+                }
+            }
+        }
+    }
     .basic_policy_div {
         max-width: 1080px;
         width: 90%;
@@ -1033,11 +1055,15 @@ header {
 }
 
 .special {
+    @include media-screen($smart) {
+        background: url(../image/sppolicy_century_banner.png) no-repeat;
+        background-size: cover;
+    }
     .parallex {
         display: flex;
         align-items: center;
         @include media-screen($smart) {
-            margin-top: 62px;
+            margin-top: 0;
             flex-direction: column;
             gap: 30px;
             height: 100%;
@@ -1137,11 +1163,11 @@ header {
             img {
                 padding-bottom: 15px;
                 max-width: calc(80/1920 * 100vw);
-                ;
                 @include media-screen($smart) {
                     transform: rotate(90deg);
                     width: 40px;
                     padding-bottom: 7px;
+                    max-width: 100%
                 }
             }
         }
@@ -1151,6 +1177,9 @@ header {
             margin-right: auto;
             width: 34%;
             opacity: 1;
+            @include media-screen($smart) {
+                width: 100%;
+            }
             h2 {
                 font-family: "Noto Sans JP";
                 font-weight: bold;
@@ -1215,6 +1244,311 @@ header {
             padding-top: 80px;
         }
     }
+    &.company {
+        &.history {
+            background: url(../image/history.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 900px;
+            margin-top: 160px;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            .basic_step {
+                .step_header {
+                    span {
+                        background: #fff;
+                    }
+                    h2 {
+                        background: #fff;
+                        color: #2772A8
+                    }
+                    p {
+                        color: white;
+                    }
+                }
+            }
+            .profile_content {
+                max-width: 1080px;
+                &_info {
+                    background-color: rgba($color: #000000, $alpha: 0.3);
+                    position: relative;
+                    .historyList {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        font-family: "Montserrat";
+                        font-weight: bold;
+                        font-size: 80px;
+                        letter-spacing: 0.02em;
+                        line-height: 60px;
+                        text-align: left;
+                        color: #fff;
+                        writing-mode: vertical-lr;
+                    }
+                    overflow-y: scroll;
+                    height: 570px;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+                table {
+                    tr {
+                        &:first-of-type {
+                            padding-top: 20px;
+                            padding-bottom: 0;
+                            td {
+                                padding-top: 20px;
+                                padding-bottom: 0;
+                                &:first-of-type {
+                                    &::after {
+                                        top: 45px;
+                                    }
+                                }
+                            }
+                        }
+                        padding-bottom: 10px;
+                        td {
+                            padding-bottom: 10px;
+                        }
+                        &:last-of-type {
+                            padding-top: 0;
+                            padding-bottom: 40px;
+                        }
+                        td {
+                            &:first-of-type {
+                                width: 25%;
+                                text-align: right;
+                                padding-right: 37px;
+                                color: white;
+                                position: relative;
+                                border-color: rgba($color: #ffffff, $alpha: 0.4);
+                                font-family: "Montserrat";
+                                font-weight: bold;
+                                font-size: 24px;
+                                letter-spacing: 0.02em;
+                                line-height: 60px;
+                                text-align: right;
+                                color: #fff;
+                                &::after {
+                                    content: '';
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+                                    background-color: #838383;
+                                    position: absolute;
+                                    right: -5px;
+                                    top: 25px;
+                                    z-index: 3;
+                                }
+                                &.zoom {
+                                    font-family: "Montserrat";
+                                    font-weight: bold;
+                                    font-size: 40px;
+                                    letter-spacing: 0.02em;
+                                    line-height: 60px;
+                                    text-align: right;
+                                    color: #fff;
+                                }
+                            }
+                            &:last-of-type {
+                                width: 75%;
+                                padding-left: 40px;
+                                color: white;
+                                font-family: "Noto Sans JP";
+                                font-weight: normal;
+                                font-size: 15px;
+                                letter-spacing: 0.04em;
+                                line-height: 60px;
+                                text-align: left;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .company_content {
+            max-width: 1080px;
+            position: relative;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: space-between;
+            margin-top: 100px;
+            .message_exp {
+                max-width: 675px;
+                width: 63%;
+                h2 {
+                    font-family: "Noto Sans JP";
+                    font-weight: 500;
+                    font-size: 25px;
+                    letter-spacing: 0.04em;
+                    line-height: 45px;
+                    text-align: left;
+                    color: #000;
+                }
+                p {
+                    font-family: "Noto Sans JP";
+                    font-weight: normal;
+                    font-size: 15px;
+                    letter-spacing: 0.05em;
+                    line-height: 30px;
+                    text-align: left;
+                    color: #000;
+                }
+            }
+            .message {
+                &_img {
+                    position: absolute;
+                    left: -100px;
+                    z-index: 4;
+                    @include media-screen(1280px) {
+                        position: relative;
+                        left: -20px;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .profile_content {
+            max-width: 875px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                tr {
+                    padding-bottom: 62px;
+                    &:last-of-type {
+                        padding-bottom: 0;
+                    }
+                    td {
+                        padding-bottom: 62px;
+                        &:last-of-type {
+                            padding-bottom: 0;
+                        }
+                        &:first-of-type {
+                            width: 140px;
+                            font-family: "Noto Sans JP";
+                            font-weight: bold;
+                            font-size: 15px;
+                            letter-spacing: 0.04em;
+                            line-height: 32px;
+                            text-align: left;
+                            color: #000;
+                            border-right: 1px solid #e1e1e1;
+                        }
+                        &:last-of-type {
+                            font-family: "Noto Sans JP";
+                            font-weight: normal;
+                            font-size: 15px;
+                            letter-spacing: 0.05em;
+                            line-height: 30px;
+                            text-align: left;
+                            color: #000;
+                            padding-left: 60px;
+                            span {
+                                font-weight: bold;
+                                font-family: "Noto Sans JP";
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .clients_content {
+        display: flex;
+        gap: 60px;
+        margin-top: 100px;
+        flex-wrap: wrap;
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+        .part {
+            width: 320px;
+            font-family: "Noto Sans JP";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            line-height: 30px;
+            text-align: left;
+            color: #000;
+            border-bottom: 1px solid;
+            padding-bottom: 5px;
+        }
+    }
+    .total {
+        font-family: "Noto Sans JP";
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        line-height: 32px;
+        text-align: right;
+        color: #000;
+        margin-top: 30px;
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &.awards {
+        background-color: #F0F0ED;
+        padding-bottom: 128px;
+        .awards_content {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            gap: 60px;
+            margin-top: 100px;
+            flex-wrap: wrap;
+            .part {
+                cursor: pointer;
+                width: 320px;
+                clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
+                &:hover {
+                    figure {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                figure {
+                    overflow: hidden;
+                    img {
+                        width: 320px;
+                        height: 249.4px;
+                        object-fit: cover;
+                        transition: all 0.5s;
+                    }
+                }
+                .text {
+                    margin-top: 30px;
+                    h4 {
+                        font-family: "Noto Sans JP";
+                        font-weight: bold;
+                        font-size: 16px;
+                        letter-spacing: 0.05em;
+                        line-height: 32px;
+                        text-align: left;
+                        color: #000;
+                    }
+                    p {
+                        font-family: Montserrat;
+                        font-weight: 300;
+                        font-size: 16px;
+                        letter-spacing: 0.02em;
+                        line-height: 32px;
+                        text-align: left;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
     &.works {
         margin-top: 0;
         padding-top: 0;
@@ -1258,6 +1592,7 @@ header {
                             .nonimage {
                                 transform: none;
                                 margin-right: 10px;
+                                width: auto;
                             }
                             &:hover {
                                 .nonimage {
@@ -1443,52 +1778,52 @@ header {
                 color: #000;
             }
         }
-    }
-    .step_header {
-        .title {
-            display: flex;
-            align-items: center;
-            span {
-                max-width: 310px;
-                width: 28%;
-                height: 1px;
-                background: #2772a8;
-                @include media-screen($smart) {
-                    width: 18%;
+        .step_header {
+            .title {
+                display: flex;
+                align-items: center;
+                span {
+                    max-width: 310px;
+                    width: 28%;
+                    height: 1px;
+                    background: #2772a8;
+                    @include media-screen($smart) {
+                        width: 18%;
+                    }
                 }
-            }
-            h2 {
-                width: 460px;
-                font-family: "Noto Sans JP";
-                font-weight: normal;
-                font-size: 25px;
-                letter-spacing: 0.04em;
-                line-height: 37.5px;
-                text-align: center;
-                color: #fff;
-                background: #2772a8;
-                @include media-screen($smart) {
-                    width: 300px;
+                h2 {
+                    width: 460px;
                     font-family: "Noto Sans JP";
-                    font-weight: 500;
-                    font-size: 20px;
-                    letter-spacing: 0.02em;
-                    line-height: 32px;
+                    font-weight: normal;
+                    font-size: 25px;
+                    letter-spacing: 0.04em;
+                    line-height: 37.5px;
                     text-align: center;
                     color: #fff;
+                    background: #2772a8;
+                    @include media-screen($smart) {
+                        width: 300px;
+                        font-family: "Noto Sans JP";
+                        font-weight: 500;
+                        font-size: 20px;
+                        letter-spacing: 0.02em;
+                        line-height: 32px;
+                        text-align: center;
+                        color: #fff;
+                    }
                 }
             }
-        }
-        p {
-            font-family: "Montserrat";
-            font-weight: normal;
-            font-size: 16px;
-            letter-spacing: 0.05em;
-            line-height: 32px;
-            text-align: center;
-            color: #2772a8;
-            text-align: center;
-            text-transform: uppercase;
+            p {
+                font-family: "Montserrat";
+                font-weight: normal;
+                font-size: 16px;
+                letter-spacing: 0.05em;
+                line-height: 32px;
+                text-align: center;
+                color: #2772a8;
+                text-align: center;
+                text-transform: uppercase;
+            }
         }
     }
     .inspection_container {
@@ -2714,12 +3049,16 @@ header {
                 display: flex;
                 align-items: flex-start;
                 gap: 10px;
+                max-width: 461px;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
                 span {
                     font-family: "Montserrat";
                     font-weight: bold;
                     font-size: 20px;
                     letter-spacing: 0.02em;
-                    line-height: 40px;
+                    line-height: 50px;
                     text-align: left;
                     color: #000;
                 }
@@ -3659,6 +3998,137 @@ header {
     }
 }
 
+.awards_slider {
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    .slick-arrow {
+        position: absolute;
+        bottom: 50px;
+        width: 40px;
+        height: 40px;
+        background: url(../image/grey_arrow.svg) no-repeat;
+        background-size: 16px;
+        background-position: center;
+        border: 2px solid #7c7c7c;
+        z-index: 10;
+        text-indent: 9999px;
+        cursor: pointer;
+    }
+    .slick-prev {
+        left: 380px;
+        @include media-screen($smart) {
+            left: 0;
+        }
+    }
+    .slider__counter {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+        @include media-screen($smart) {
+            left: 0;
+            width: 180px;
+            background: white;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .slider__counter_div {
+            @include media-screen($smart) {
+                width: 50px;
+                margin-left: 55px;
+            }
+        }
+        .slider__counter_span {
+            display: block;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 30px;
+            letter-spacing: 0.02em;
+            line-height: 1;
+            text-align: left;
+            color: #7c7c7c;
+            width: fit-content;
+        }
+        .slider__counter_total {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+            line-height: 1;
+            text-align: right;
+            color: #7c7c7c;
+            margin-left: 20px;
+        }
+    }
+    .slick-next {
+        right: 380px;
+        transform: rotate(180deg);
+        @include media-screen($smart) {
+            left: 120px;
+        }
+    }
+    .part {
+        padding: 80px 100px 180px;
+        clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
+        .mark {
+            font-family: "PristineScript";
+            font-weight: normal;
+            font-size: 60px;
+            letter-spacing: 0.04em;
+            line-height: 90px;
+            text-align: left;
+            color: #2772a8;
+            opacity: 0.2;
+        }
+        .sliderHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid #2772A8;
+            padding-bottom: 35px;
+            .text {
+                .title {
+                    font-family: "Noto Sans JP";
+                    font-weight: 500;
+                    font-size: 25px;
+                    letter-spacing: 0.04em;
+                    line-height: 45px;
+                    text-align: left;
+                    color: #2772a8;
+                }
+                .date {
+                    font-family: "Montserrat";
+                    font-weight: 300;
+                    font-size: 16px;
+                    letter-spacing: 0.02em;
+                    line-height: 32px;
+                    text-align: left;
+                    color: #000;
+                    margin-top: 40px;
+                }
+            }
+        }
+        .sliderContent {
+            margin-top: 80px;
+            p {
+                font-family: "Noto Sans JP";
+                font-weight: normal;
+                font-size: 15px;
+                letter-spacing: 0.05em;
+                line-height: 30px;
+                text-align: left;
+                color: #000;
+            }
+        }
+        .sliderfooter {
+            margin-top: 120px;
+            display: flex;
+            gap: 10px;
+        }
+    }
+}
+
 .special {
     position: relative;
     display: block;
@@ -3666,6 +4136,9 @@ header {
     height: 800px;
     overflow: hidden;
     color: #BBB;
+    @include media-screen($smart) {
+        height: auto;
+    }
 }
 
 .special .cover {
@@ -3694,6 +4167,9 @@ header {
     width: 100%;
     height: 100%;
     z-index: 2;
+    @include media-screen($smart) {
+        position: relative;
+    }
 }
 
 .special .text {
@@ -3706,6 +4182,23 @@ header {
     top: 50%;
     -webkit-transform: translateZ(0px) translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+    @include media-screen($smart) {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+}
+
+.popup {
+    z-index: 1001;
+    width: 930px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.p_body {
+    z-index: 1000;
 }
 
 #A,
@@ -3855,5 +4348,13 @@ header {
 @keyframes line-draw {
     100% {
         stroke-dashoffset: 0;
+    }
+}
+
+.company_map {
+    margin-top: 132px;
+    img {
+        width: 100%;
+        max-height: 746px;
     }
 }

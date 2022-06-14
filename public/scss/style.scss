@@ -649,12 +649,12 @@ header {
                     span {
                         position: absolute;
                         overflow: hidden;
-                        left: 0;
-                        right: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
                         color: white;
                         transition: top .4s ease-out;
                         font-size: 16px;
-                        padding: 5px;
+                        padding: 5px 0;
                         font-weight: 600;
                         &:first-child {
                             top: 2px;
@@ -668,6 +668,9 @@ header {
                         &.jp {
                             font-family: 'Noto Sans JP', sans-serif;
                             font-weight: 500;
+                            &.contact {
+                                border-bottom: 2px solid #2272a8;
+                            }
                         }
                     }
                 }
@@ -921,6 +924,11 @@ header {
         margin-top: 138px;
         justify-content: flex-end;
         margin-right: 0;
+        position: relative;
+        z-index: 5;
+        width: fit-content;
+        padding: 10px 20px;
+        margin-left: auto;
         img {
             margin-left: 10px;
             width: 20px;
@@ -1313,6 +1321,7 @@ header {
                     width: fit-content;
                     margin-left: auto;
                     padding: 10px 20px;
+                    position: relative;
                     &:hover,
                     &:focus {
                         outline: 0;
@@ -2492,11 +2501,17 @@ footer {
 .top-right:before {
     content: "";
     position: absolute;
-    z-index: -1
+    z-index: 3;
 }
 
 .tech_link.right-bottom::before,
 .tech_link.right-bottom::after {
+    background: #000;
+    transition: all 1s ease 0s;
+}
+
+.company_link.right-bottom::before,
+.company_link.right-bottom::after {
     background: #000;
     transition: all 1s ease 0s;
 }
@@ -2519,7 +2534,7 @@ footer {
 .right-bottom:before {
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: 3;
     width: 3px;
     height: 0px;
     top: 0;
