@@ -1,9 +1,10 @@
-﻿.popup {
+.popup {
     position: fixed;
     z-index: 2;
-    top: 60px;
+    top: 50%;
     left: 50%;
     width: 460px;
+    transform: translateY(-50%);
     height: 100ch;
     background: #fff;
     -moz-box-shadow: 4px 4px 30px #130507;
@@ -13,6 +14,12 @@
     -o-transition: top 800ms;
     -webkit-transition: top 800ms;
     transition: top 800ms;
+}
+
+@media screen and (max-width: 500px) {
+    .popup {
+        height: 520px;
+    }
 }
 
 .p_content {

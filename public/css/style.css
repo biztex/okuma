@@ -1051,6 +1051,28 @@ header .header .menu_items .navigation span:last-of-type {
   }
 }
 
+.popup .scroll-down:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 1px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+}
+.popup .scroll-down .bar:before {
+  filter: brightness(0) invert(0);
+}
+.popup .scroll-down {
+  position: absolute;
+  width: 6px;
+  height: 96px;
+  right: 30px;
+  bottom: 0;
+  overflow: hidden;
+  top: 20%;
+}
+
 .scroll-down {
   position: absolute;
   width: 6px;

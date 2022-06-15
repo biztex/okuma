@@ -1,4 +1,4 @@
-﻿(function($) {
+(function($) {
   $.fn.simplePopup = function(event) {
     var simplePopup = {
       settings: {
