@@ -1700,7 +1700,6 @@ header {
             .part {
                 cursor: pointer;
                 width: 320px;
-                clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
                 &:hover {
                     figure {
                         img {
@@ -1710,6 +1709,7 @@ header {
                 }
                 figure {
                     overflow: hidden;
+                    clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
                     img {
                         width: 320px;
                         height: 249.4px;

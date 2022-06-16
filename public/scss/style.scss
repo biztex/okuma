@@ -1786,6 +1786,11 @@ header {
         }
         background: url("../image/column.png");
         margin-top: 140px;
+        margin-bottom: 140px;
+        @include media-screen($smart) {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
         .title {
             .products_slide {
                 .part {
@@ -2095,6 +2100,281 @@ header {
             bottom: 0;
             right: 0;
             padding: 10px 20px;
+            img {
+                width: 24px;
+                margin-left: 15px;
+                transition: transform 0.3s ease-out;
+            }
+            &:hover,
+            &:focus {
+                outline: 0;
+                color: #000;
+                -webkit-transition: color 1s ease;
+                -moz-transition: color 1s ease;
+                -ms-transition: color 1s ease;
+                -o-transition: color 1s ease;
+                transition: color 1s ease;
+                cursor: pointer;
+                &:before,
+                &:after {
+                    transition: all 1s ease 0s;
+                    background-color: #000;
+                }
+                img {
+                    transform: translateX(4px);
+                }
+            }
+            @include media-screen(768px) {
+                margin-top: 40px;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 0.02em;
+                line-height: 30px;
+                width: 259px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 60px;
+                background: transparent;
+                border: 1px solid #000;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                padding-left: 18px;
+                padding-right: 18px;
+                left: 0;
+                right: 0;
+                position: relative;
+            }
+        }
+        &.recommend {
+            .slick-arrow {
+                display: none !important;
+            }
+            .products_slide {
+                .slick-list {
+                    margin: 0 -20px;
+                }
+                .slick-slide {
+                    margin: 0 20px;
+                }
+                .part {
+                    display: flex !important;
+                    background-color: #7C7C7C;
+                    gap: 20px;
+                    position: relative;
+                    align-items: flex-start;
+                    .partImage {
+                        padding: 5px;
+                        img {
+                            max-width: 260px;
+                            height: 200px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    .part_exp {
+                        p {
+                            padding-right: 30px;
+                            font-family: "Noto Sans JP";
+                            color: white;
+                            &:first-of-type {
+                                font-weight: bold;
+                                font-size: 25px;
+                                letter-spacing: 0.04em;
+                                line-height: 30px;
+                                text-align: left;
+                                color: #fff;
+                            }
+                            &:nth-of-type(2) {
+                                font-size: 16px;
+                                letter-spacing: 0.05em;
+                                line-height: 30px;
+                                font-weight: normal;
+                                margin-top: 0;
+                            }
+                            &:last-of-type {
+                                font-size: 16px;
+                                letter-spacing: 0.05em;
+                                line-height: 30px;
+                                font-weight: normal;
+                                margin-top: 20px;
+                            }
+                        }
+                        .extenal {
+                            width: 18.5px;
+                            height: 18.5px;
+                            display: block;
+                            position: absolute;
+                            bottom: 16px;
+                            right: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.worksComponent {
+    margin-top: 140px;
+    padding: 0 20px;
+    background-color: #EEEFF4;
+    clip-path: polygon(50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0% 0%);
+    @include media-screen($smart) {
+        margin-top: 80px;
+        clip-path: polygon(50% 1%, 100% 0, 100% 99%, 50% 100%, 0 99%, 0% 0%);
+    }
+    .worksComponent_box {
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 160px 0;
+        @include media-screen($smart) {
+            padding: 74px 0;
+        }
+        h2 {
+            position: relative;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: 0.5em;
+            line-height: 48px;
+            text-align: left;
+            color: #fff;
+            background: #2772A8;
+            display: inline-block;
+            @include media-screen(768px) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .function_content {
+            margin-top: 65px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 35px;
+            @include media-screen($smart) {
+                display: flex;
+                padding-top: 0;
+                gap: 60px;
+            }
+            .part {
+                width: 335px;
+                a {
+                    figure {
+                        position: relative;
+                        border: 2px solid #2772a8;
+                        img {
+                            width: 100%;
+                        }
+                        span {
+                            background: url(../image/white.png);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            width: 40px;
+                            height: 40px;
+                            background-color: #2772a8;
+                            position: absolute;
+                            display: block;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        p {
+                            font-family: "Montserrat";
+                            font-weight: bold;
+                            font-size: 14px;
+                            letter-spacing: 0.2em;
+                            line-height: 48px;
+                            text-align: left;
+                            color: #2772a8;
+                            background: #f0f0ed;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .nonimage {
+                            transform: none;
+                            margin-right: 10px;
+                            width: auto;
+                        }
+                        &:hover {
+                            .nonimage {
+                                transform: none;
+                            }
+                        }
+                    }
+                }
+                .title {
+                    h3 {
+                        font-family: "Noto Sans JP";
+                        font-weight: bold;
+                        font-size: 16px;
+                        letter-spacing: 0.05em;
+                        line-height: 30px;
+                        text-align: left;
+                        color: #000;
+                        margin-top: 18px;
+                        @include media-screen($smart) {
+                            font-family: "Noto Sans JP";
+                            font-weight: bold;
+                            font-size: 14px;
+                            letter-spacing: 0.05em;
+                            line-height: 24px;
+                            text-align: left;
+                            color: #000;
+                        }
+                    }
+                    p {
+                        font-family: "Noto Sans JP";
+                        font-weight: 500;
+                        font-size: 16px;
+                        letter-spacing: 0.05em;
+                        line-height: 30px;
+                        text-align: left;
+                        color: #7c7c7c;
+                    }
+                }
+                .tag {
+                    margin-top: 16px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    p {
+                        font-family: "Noto Sans JP";
+                        font-weight: bold;
+                        font-size: 14px;
+                        letter-spacing: 0.02em;
+                        line-height: 32px;
+                        text-align: left;
+                        color: #2772a8;
+                        padding: 0 10px;
+                        border: 1px solid #2772a8;
+                    }
+                }
+                &:empty {
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+        .product_link {
+            font-family: "Noto Sans JP";
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.02em;
+            line-height: 30px;
+            text-align: left;
+            color: #000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            width: fit-content;
+            margin-left: auto;
+            padding: 10px 20px;
+            margin-top: 75px;
             img {
                 width: 24px;
                 margin-left: 15px;

@@ -10,6 +10,8 @@ $(document).ready(function() {
     });
 
 
+
+
     try {
         $(".search_filtering.info .item_list a").click(function(e) {
             localStorage.setItem("searchInfo", $(this).data('id'));
@@ -245,7 +247,7 @@ $(function() {
         dots: true,
     });
 
-    $('.products .products_slide').slick({
+    $('.products .title.product .products_slide').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
@@ -272,8 +274,35 @@ $(function() {
             },
         ]
     });
-    $('.products.recommend .products_slide').slick('unslick');
-    $('.products.recommend .products_slide').slick({
+
+    $('.products.column .title .products_slide').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        dots: true,
+        responsive: [{
+                breakpoint: 500, //モニターの横幅が769px以下の見せ方
+                settings: {
+                    centerMode: true,
+                    centerPadding: '55px',
+                    infinite: true,
+                    variableWidth: false,
+                    slidesToShow: 1, //スライドを画面に2枚見せる
+                }
+            },
+            {
+                breakpoint: 768, //モニターの横幅が769px以下の見せ方
+                settings: {
+                    slidesToShow: 2, //スライドを画面に2枚見せる
+                }
+            },
+        ]
+    });
+    $('.products .title.recommend .products_slide').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
@@ -290,6 +319,17 @@ $(function() {
                 slidesToShow: 1, //スライドを画面に2枚見せる
             }
         }, ]
+    });
+
+
+
+    $(".products .title.product .products_slide .slick-prev").click(function() {
+        $(".products .title.recommend .products_slide .slick-prev").click();
+    });
+
+    $(".products .title.product .products_slide .slick-next").click(function() {
+
+        $(".products .title.recommend .products_slide .slick-next").click();
     });
 
 

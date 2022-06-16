@@ -1734,6 +1734,7 @@ header .header .menu_items .navigation span:last-of-type {
 .products.column {
   background: url("../image/column.png");
   margin-top: 140px;
+  margin-bottom: 140px;
 }
 .products.column.information {
   background: #F0F0ED;
@@ -1781,6 +1782,12 @@ header .header .menu_items .navigation span:last-of-type {
   position: absolute;
   bottom: -6px;
   right: -15px;
+}
+@media screen and (max-width: 500px) {
+  .products.column {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
 }
 .products.column .title .products_slide .part .image_part {
   position: relative;
@@ -2114,6 +2121,279 @@ header .header .menu_items .navigation span:last-of-type {
 }
 @media screen and (max-width: 768px) {
   .products .title .product_link {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 30px;
+    width: 259px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    background: transparent;
+    border: 1px solid #000;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 18px;
+    padding-right: 18px;
+    left: 0;
+    right: 0;
+    position: relative;
+  }
+}
+.products .title.recommend .slick-arrow {
+  display: none !important;
+}
+.products .title.recommend .products_slide .slick-list {
+  margin: 0 -20px;
+}
+.products .title.recommend .products_slide .slick-slide {
+  margin: 0 20px;
+}
+.products .title.recommend .products_slide .part {
+  display: flex !important;
+  background-color: #7C7C7C;
+  gap: 20px;
+  position: relative;
+  align-items: flex-start;
+}
+.products .title.recommend .products_slide .part .partImage {
+  padding: 5px;
+}
+.products .title.recommend .products_slide .part .partImage img {
+  max-width: 260px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.products .title.recommend .products_slide .part .part_exp p {
+  padding-right: 30px;
+  font-family: "Noto Sans JP";
+  color: white;
+}
+.products .title.recommend .products_slide .part .part_exp p:first-of-type {
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  text-align: left;
+  color: #fff;
+}
+.products .title.recommend .products_slide .part .part_exp p:nth-of-type(2) {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  font-weight: normal;
+  margin-top: 0;
+}
+.products .title.recommend .products_slide .part .part_exp p:last-of-type {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  font-weight: normal;
+  margin-top: 20px;
+}
+.products .title.recommend .products_slide .part .part_exp .extenal {
+  width: 18.5px;
+  height: 18.5px;
+  display: block;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.worksComponent {
+  margin-top: 140px;
+  padding: 0 20px;
+  background-color: #EEEFF4;
+  clip-path: polygon(50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0% 0%);
+}
+@media screen and (max-width: 500px) {
+  .worksComponent {
+    margin-top: 80px;
+    clip-path: polygon(50% 1%, 100% 0, 100% 99%, 50% 100%, 0 99%, 0% 0%);
+  }
+}
+.worksComponent .worksComponent_box {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 160px 0;
+}
+@media screen and (max-width: 500px) {
+  .worksComponent .worksComponent_box {
+    padding: 74px 0;
+  }
+}
+.worksComponent .worksComponent_box h2 {
+  position: relative;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0.5em;
+  line-height: 48px;
+  text-align: left;
+  color: #fff;
+  background: #2772A8;
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .worksComponent .worksComponent_box h2 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.worksComponent .worksComponent_box .function_content {
+  margin-top: 65px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+@media screen and (max-width: 500px) {
+  .worksComponent .worksComponent_box .function_content {
+    display: flex;
+    padding-top: 0;
+    gap: 60px;
+  }
+}
+.worksComponent .worksComponent_box .function_content .part {
+  width: 335px;
+}
+.worksComponent .worksComponent_box .function_content .part a figure {
+  position: relative;
+  border: 2px solid #2772a8;
+}
+.worksComponent .worksComponent_box .function_content .part a figure img {
+  width: 100%;
+}
+.worksComponent .worksComponent_box .function_content .part a figure span {
+  background: url(../image/white.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-color: #2772a8;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+}
+.worksComponent .worksComponent_box .function_content .part a figure p {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  line-height: 48px;
+  text-align: left;
+  color: #2772a8;
+  background: #f0f0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.worksComponent .worksComponent_box .function_content .part a figure .nonimage {
+  transform: none;
+  margin-right: 10px;
+  width: auto;
+}
+.worksComponent .worksComponent_box .function_content .part a figure:hover .nonimage {
+  transform: none;
+}
+.worksComponent .worksComponent_box .function_content .part .title h3 {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+  margin-top: 18px;
+}
+@media screen and (max-width: 500px) {
+  .worksComponent .worksComponent_box .function_content .part .title h3 {
+    font-family: "Noto Sans JP";
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 24px;
+    text-align: left;
+    color: #000;
+  }
+}
+.worksComponent .worksComponent_box .function_content .part .title p {
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #7c7c7c;
+}
+.worksComponent .worksComponent_box .function_content .part .tag {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.worksComponent .worksComponent_box .function_content .part .tag p {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  text-align: left;
+  color: #2772a8;
+  padding: 0 10px;
+  border: 1px solid #2772a8;
+}
+.worksComponent .worksComponent_box .function_content .part:empty {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.worksComponent .worksComponent_box .product_link {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  padding: 10px 20px;
+  margin-top: 75px;
+}
+.worksComponent .worksComponent_box .product_link img {
+  width: 24px;
+  margin-left: 15px;
+  transition: transform 0.3s ease-out;
+}
+.worksComponent .worksComponent_box .product_link:hover, .worksComponent .worksComponent_box .product_link:focus {
+  outline: 0;
+  color: #000;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  -ms-transition: color 1s ease;
+  -o-transition: color 1s ease;
+  transition: color 1s ease;
+  cursor: pointer;
+}
+.worksComponent .worksComponent_box .product_link:hover:before, .worksComponent .worksComponent_box .product_link:hover:after, .worksComponent .worksComponent_box .product_link:focus:before, .worksComponent .worksComponent_box .product_link:focus:after {
+  transition: all 1s ease 0s;
+  background-color: #000;
+}
+.worksComponent .worksComponent_box .product_link:hover img, .worksComponent .worksComponent_box .product_link:focus img {
+  transform: translateX(4px);
+}
+@media screen and (max-width: 768px) {
+  .worksComponent .worksComponent_box .product_link {
     margin-top: 40px;
     font-weight: 500;
     font-size: 16px;
