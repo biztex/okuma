@@ -1631,7 +1631,7 @@ header .header .menu_items .navigation span:last-of-type {
     width: 100%;
   }
 }
-.technical_slide .technical_video .technical_slider img {
+.technical_slide .technical_video .technical_slider iframe {
   width: 100%;
   height: 60vh;
   object-fit: cover;
