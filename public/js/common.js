@@ -421,9 +421,28 @@ function EachTextAnimeControl() {
     });
 }
 
+try {
+    function TextAnimeControl() {
+        $('.textAnimation').each(function() {
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll >= elemPos - windowHeight) {
+                $(this).addClass("appeartext");
+            }
+            //  else {
+            //     $(this).removeClass("appeartext");
+            // }
+        });
+    }
+} catch (error) {}
+TextAnimeControl();
+
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function() {
     EachTextAnimeControl(); /* アニメーション用の関数を呼ぶ*/
+    TextAnimeControl();
 }); // ここまで画面をスクロールをしたら動かしたい場合の記述
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
@@ -461,6 +480,7 @@ $('.policy_slide').on('init', function(event, slick, currentSlide) {
     const CLASSNAME = "-visible";
     CurrentSlideDom.eq(0).addClass(CLASSNAME);
 
+
 });
 
 $('.policy_slide')
@@ -475,6 +495,7 @@ $('.policy_slide')
         }
         $target.removeClass(CLASSNAME);
 
+        CurrentSlideDom.find(".textAnimation").removeClass("appeartext")
 
     });
 
@@ -485,6 +506,8 @@ $('.policy_slide')
         const CLASSNAME = "-visible";
         let $target = CurrentSlideDom.find(".slide_title");
         $target.addClass(CLASSNAME);
+
+        CurrentSlideDom.find(".textAnimation").addClass("appeartext")
 
 
     });

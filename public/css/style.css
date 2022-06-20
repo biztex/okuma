@@ -1173,6 +1173,8 @@ header .header .menu_items .navigation span:last-of-type {
   background: #2772A8;
   display: inline-block;
   margin-top: 165px;
+  text-indent: 0.5em;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   .policy .policy_slide .slide .content h2 {
@@ -1180,6 +1182,36 @@ header .header .menu_items .navigation span:last-of-type {
     margin-left: 50%;
     transform: translateX(-50%);
   }
+}
+.policy .policy_slide .slide .content h2::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 3s ease 0s, left 3s ease 0s;
+  background: #2772A8;
+}
+.policy .policy_slide .slide .content h2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 3s ease 0s, right 3s ease 0s;
+  background: #2772A8;
+}
+.policy .policy_slide .slide .content h2.appeartext::before {
+  width: 0;
+  left: -50%;
+}
+.policy .policy_slide .slide .content h2.appeartext::after {
+  width: 0;
+  right: -50%;
 }
 .policy .policy_slide .slide .content .slide_title {
   margin-top: 100px;
@@ -1560,12 +1592,44 @@ header .header .menu_items .navigation span:last-of-type {
   color: #fff;
   background: #2772A8;
   width: fit-content;
+  position: relative;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .technical_slide .technical_text h2 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+.technical_slide .technical_text h2::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, left 2s ease 0s;
+  background: #2772A8;
+}
+.technical_slide .technical_text h2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, right 2s ease 0s;
+  background: #2772A8;
+}
+.technical_slide .technical_text h2.appeartext::before {
+  width: 0;
+  left: -50%;
+}
+.technical_slide .technical_text h2.appeartext::after {
+  width: 0;
+  right: -50%;
 }
 .technical_slide .technical_text .factory {
   margin-top: 105px;
@@ -1732,9 +1796,11 @@ header .header .menu_items .navigation span:last-of-type {
   }
 }
 .products.column {
-  background: url("../image/column.png");
+  background: url("../image/column.png") no-repeat;
   margin-top: 140px;
   margin-bottom: 140px;
+  background-size: cover;
+  background-position: center;
 }
 .products.column.information {
   background: #F0F0ED;
@@ -1945,7 +2011,7 @@ header .header .menu_items .navigation span:last-of-type {
   position: relative;
 }
 .products .title h2 {
-  position: absolute;
+  position: relative;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 24px;
@@ -1956,12 +2022,44 @@ header .header .menu_items .navigation span:last-of-type {
   background: #2772A8;
   display: inline-block;
   top: 0;
+  overflow: hidden;
+  width: fit-content;
 }
 @media screen and (max-width: 768px) {
   .products .title h2 {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+.products .title h2::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, left 2s ease 0s;
+  background: #2772A8;
+}
+.products .title h2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, right 2s ease 0s;
+  background: #2772A8;
+}
+.products .title h2.appeartext::before {
+  width: 0;
+  left: -50%;
+}
+.products .title h2.appeartext::after {
+  width: 0;
+  right: -50%;
 }
 .products .title .products_slide {
   padding-top: 105px;
@@ -2237,12 +2335,43 @@ header .header .menu_items .navigation span:last-of-type {
   color: #fff;
   background: #2772A8;
   display: inline-block;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .worksComponent .worksComponent_box h2 {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+.worksComponent .worksComponent_box h2::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, left 2s ease 0s;
+  background: #2772A8;
+}
+.worksComponent .worksComponent_box h2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, right 2s ease 0s;
+  background: #2772A8;
+}
+.worksComponent .worksComponent_box h2.appeartext::before {
+  width: 0;
+  left: -50%;
+}
+.worksComponent .worksComponent_box h2.appeartext::after {
+  width: 0;
+  right: -50%;
 }
 .worksComponent .worksComponent_box .function_content {
   margin-top: 65px;
@@ -2453,12 +2582,43 @@ header .header .menu_items .navigation span:last-of-type {
   color: #fff;
   background-color: #2772A8;
   width: fit-content;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   .recruit .title h2 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+.recruit .title h2::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, left 2s ease 0s;
+  background: #2772A8;
+}
+.recruit .title h2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, right 2s ease 0s;
+  background: #2772A8;
+}
+.recruit .title h2.appeartext::before {
+  width: 0;
+  left: -50%;
+}
+.recruit .title h2.appeartext::after {
+  width: 0;
+  right: -50%;
 }
 .recruit .title p {
   font-family: "Noto Sans JP";
@@ -2565,7 +2725,7 @@ footer .footer {
   }
 }
 footer .footer h2 {
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 24px;
   letter-spacing: 0.5em;
@@ -2574,12 +2734,43 @@ footer .footer h2 {
   color: #fff;
   background: #2772A8;
   width: fit-content;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   footer .footer h2 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+footer .footer h2::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, left 2s ease 0s;
+  background: #2772A8;
+}
+footer .footer h2::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none repeat scroll 0 0 transparent;
+  transition: width 2s ease 0s, right 2s ease 0s;
+  background: #2772A8;
+}
+footer .footer h2.appeartext::before {
+  width: 0;
+  left: -50%;
+}
+footer .footer h2.appeartext::after {
+  width: 0;
+  right: -50%;
 }
 footer .footer .comany_name {
   font-family: "Noto Sans JP";
@@ -2687,6 +2878,10 @@ footer .footer .address .fo_logo .copy {
   letter-spacing: 0.05em;
   line-height: 32px;
   color: #fff;
+}
+footer .footer .address .fo_logo .fo_image {
+  display: block;
+  text-align: right;
 }
 @media screen and (max-width: 500px) {
   footer .footer .address .fo_logo {
@@ -2932,6 +3127,12 @@ footer .footer .address .fo_logo .copy {
   width: 100%;
   height: 5px;
   background-color: #2272a8;
+}
+
+.textAnimation {
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

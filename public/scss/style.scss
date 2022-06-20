@@ -1188,10 +1188,44 @@ header {
                     background: #2772A8;
                     display: inline-block;
                     margin-top: 165px;
+                    text-indent: 0.5em;
+                    position: relative;
                     @include media-screen($smart) {
                         margin-top: 0;
                         margin-left: 50%;
                         transform: translateX(-50%);
+                    }
+                    &::before {
+                        content: '';
+                        width: 50%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: none repeat scroll 0 0 transparent;
+                        transition: width 3s ease 0s, left 3s ease 0s;
+                        background: #2772A8;
+                    }
+                    &::after {
+                        content: '';
+                        width: 50%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: none repeat scroll 0 0 transparent;
+                        transition: width 3s ease 0s, right 3s ease 0s;
+                        background: #2772A8;
+                    }
+                    &.appeartext {
+                        &::before {
+                            width: 0;
+                            left: -50%;
+                        }
+                        &::after {
+                            width: 0;
+                            right: -50%;
+                        }
                     }
                 }
                 .slide_title {
@@ -1561,9 +1595,43 @@ header {
                 color: #fff;
                 background: #2772A8;
                 width: fit-content;
+                position: relative;
+                overflow: hidden;
                 @include media-screen(768px) {
                     margin-left: auto;
                     margin-right: auto;
+                }
+                &::before {
+                    content: '';
+                    width: 50%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: none repeat scroll 0 0 transparent;
+                    transition: width 2s ease 0s, left 2s ease 0s;
+                    background: #2772A8;
+                }
+                &::after {
+                    content: '';
+                    width: 50%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: none repeat scroll 0 0 transparent;
+                    transition: width 2s ease 0s, right 2s ease 0s;
+                    background: #2772A8;
+                }
+                &.appeartext {
+                    &::before {
+                        width: 0;
+                        left: -50%;
+                    }
+                    &::after {
+                        width: 0;
+                        right: -50%;
+                    }
                 }
             }
             .factory {
@@ -1784,9 +1852,11 @@ header {
                 }
             }
         }
-        background: url("../image/column.png");
+        background: url("../image/column.png") no-repeat;
         margin-top: 140px;
         margin-bottom: 140px;
+        background-size: cover;
+        background-position: center;
         @include media-screen($smart) {
             margin-top: 80px;
             margin-bottom: 80px;
@@ -1959,7 +2029,7 @@ header {
         margin-right: auto;
         position: relative;
         h2 {
-            position: absolute;
+            position: relative;
             font-family: "Montserrat";
             font-weight: bold;
             font-size: 24px;
@@ -1970,9 +2040,43 @@ header {
             background: #2772A8;
             display: inline-block;
             top: 0;
+            overflow: hidden;
+            width: fit-content;
             @include media-screen(768px) {
                 left: 50%;
                 transform: translateX(-50%);
+            }
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, left 2s ease 0s;
+                background: #2772A8;
+            }
+            &::after {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, right 2s ease 0s;
+                background: #2772A8;
+            }
+            &.appeartext {
+                &::before {
+                    width: 0;
+                    left: -50%;
+                }
+                &::after {
+                    width: 0;
+                    right: -50%;
+                }
             }
         }
         .products_slide {
@@ -2243,9 +2347,42 @@ header {
             color: #fff;
             background: #2772A8;
             display: inline-block;
+            overflow: hidden;
             @include media-screen(768px) {
                 left: 50%;
                 transform: translateX(-50%);
+            }
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, left 2s ease 0s;
+                background: #2772A8;
+            }
+            &::after {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, right 2s ease 0s;
+                background: #2772A8;
+            }
+            &.appeartext {
+                &::before {
+                    width: 0;
+                    left: -50%;
+                }
+                &::after {
+                    width: 0;
+                    right: -50%;
+                }
             }
         }
         .function_content {
@@ -2455,9 +2592,42 @@ header {
             color: #fff;
             background-color: #2772A8;
             width: fit-content;
+            position: relative;
             @include media-screen($smart) {
                 margin-left: auto;
                 margin-right: auto;
+            }
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, left 2s ease 0s;
+                background: #2772A8;
+            }
+            &::after {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, right 2s ease 0s;
+                background: #2772A8;
+            }
+            &.appeartext {
+                &::before {
+                    width: 0;
+                    left: -50%;
+                }
+                &::after {
+                    width: 0;
+                    right: -50%;
+                }
             }
         }
         p {
@@ -2559,7 +2729,7 @@ footer {
             padding-top: 80px;
         }
         h2 {
-            font-family: Montserrat;
+            font-family: "Montserrat";
             font-weight: bold;
             font-size: 24px;
             letter-spacing: 0.5em;
@@ -2568,9 +2738,42 @@ footer {
             color: #fff;
             background: #2772A8;
             width: fit-content;
+            position: relative;
             @include media-screen($smart) {
                 margin-left: auto;
                 margin-right: auto;
+            }
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, left 2s ease 0s;
+                background: #2772A8;
+            }
+            &::after {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: none repeat scroll 0 0 transparent;
+                transition: width 2s ease 0s, right 2s ease 0s;
+                background: #2772A8;
+            }
+            &.appeartext {
+                &::before {
+                    width: 0;
+                    left: -50%;
+                }
+                &::after {
+                    width: 0;
+                    right: -50%;
+                }
             }
         }
         .comany_name {
@@ -2671,6 +2874,10 @@ footer {
                     letter-spacing: 0.05em;
                     line-height: 32px;
                     color: #fff;
+                }
+                .fo_image {
+                    display: block;
+                    text-align: right;
                 }
                 @include media-screen($smart) {
                     .copy {
@@ -2920,4 +3127,10 @@ footer {
     width: 100%;
     height: 5px;
     background-color: #2272a8;
+}
+
+.textAnimation {
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    overflow: hidden;
 }
