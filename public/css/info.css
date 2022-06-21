@@ -363,21 +363,61 @@ header {
 }
 header .nav_menu {
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: url(../image/mainbanner.png) no-repeat;
+  background-size: cover;
   display: none;
   width: 100%;
   height: 100vh;
   top: 0;
   padding: 170px 40px 170px 60px;
   z-index: 100;
+  overflow: hidden;
 }
 @media screen and (max-width: 500px) {
   header .nav_menu {
-    padding: 94px 30px 94px 30px;
+    padding: 88px 30px 0 30px;
+    overflow-y: auto;
+  }
+}
+header .nav_menu .tri {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  top: 0;
+  opacity: 0.6;
+  border-right: 0;
+  border-left: 31.796875vw solid #2772A8;
+  border-top: 0;
+  border-bottom: 85vh solid transparent;
+}
+header .nav_menu .tri.second {
+  opacity: 1;
+  mix-blend-mode: color;
+  border-left: 38.828125vw solid #2772A8;
+  border-top: 0;
+  border-bottom: 100vh solid transparent;
+}
+@media screen and (max-width: 500px) {
+  header .nav_menu .tri {
+    background: url(../image/banner_mark.png) no-repeat;
+    bottom: auto;
+    top: 0;
+    border-left: 75vw solid #2772A8;
+    border-top: 0;
+    border-bottom: 70vh solid transparent;
+  }
+  header .nav_menu .tri.second {
+    opacity: 1;
+    mix-blend-mode: color;
+    border-left: 90vw solid #2772A8;
+    border-top: 0;
+    border-bottom: 85vh solid transparent;
   }
 }
 header .nav_menu_part {
   display: flex;
+  position: relative;
+  z-index: 1;
   gap: 11.5vw;
 }
 @media screen and (max-width: 960px) {
@@ -399,19 +439,19 @@ header .nav_menu_part {
 }
 @media screen and (max-width: 500px) {
   header .nav_menu_part dl:first-child dd:first-child {
-    grid-area: "header";
+    grid-area: header;
   }
   header .nav_menu_part dl:first-child dd:nth-child(2) {
-    grid-area: "menu";
+    grid-area: menu;
   }
   header .nav_menu_part dl:first-child dd:nth-child(3) {
-    grid-area: "main";
+    grid-area: main;
   }
   header .nav_menu_part dl:first-child dd:last-child {
-    grid-area: "right";
+    grid-area: right;
   }
   header .nav_menu_part dl:first-child dd:last-child {
-    grid-area: "footer";
+    grid-area: footer;
   }
 }
 @media screen and (max-width: 500px) {
@@ -426,13 +466,13 @@ header .nav_menu_part {
     grid-template-areas: "header header" "left right";
   }
   header .nav_menu_part dl:last-child dd:nth-child(3) {
-    grid-area: "header";
+    grid-area: header;
   }
   header .nav_menu_part dl:last-child dd:nth-child(4) {
-    grid-area: "left";
+    grid-area: left;
   }
   header .nav_menu_part dl:last-child dd:last-child {
-    grid-area: "right";
+    grid-area: right;
   }
 }
 header .nav_menu_part dl dd {
@@ -440,7 +480,7 @@ header .nav_menu_part dl dd {
 }
 @media screen and (max-width: 500px) {
   header .nav_menu_part dl dd {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 }
 header .nav_menu_part dl dd h3 {
@@ -474,7 +514,7 @@ header .nav_menu_part dl dd p {
   header .nav_menu_part dl dd p {
     font-size: 13px;
     letter-spacing: 0.04em;
-    line-height: 26px;
+    line-height: 22px;
   }
 }
 header .nav_menu_part dl dd p::after {
@@ -505,6 +545,11 @@ header .nav_menu_part dl dd.policy h3 {
   align-items: center;
   gap: 10px;
 }
+@media screen and (max-width: 500px) {
+  header .nav_menu_part dl dd.policy h3 {
+    font-size: 13px;
+  }
+}
 header .nav_menu_part dl dd.policy p {
   font-family: "Noto Sans JP";
   font-weight: normal;
@@ -513,6 +558,12 @@ header .nav_menu_part dl dd.policy p {
   line-height: 30px;
   text-align: left;
   color: #fff;
+}
+@media screen and (max-width: 500px) {
+  header .nav_menu_part dl dd.policy p {
+    font-size: 12px;
+    line-height: 26px;
+  }
 }
 header .nav_menu .social {
   position: fixed;
@@ -698,33 +749,47 @@ header .header .menu_items .navigation span:last-of-type {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.6;
   transform: translate3d(0, 0, 10px);
   background-size: cover;
+  mix-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .video .tri {
-  background: url(../image/banner_mark_pc.png) no-repeat;
-  width: 40%;
-  height: 100vh;
-  background-size: cover;
-  background-position: right;
   position: absolute;
   left: 0;
   z-index: 0;
   top: 0;
   opacity: 0.6;
+  border-right: 0;
+  border-left: 407px solid #2772A8;
+  border-top: 0;
+  border-bottom: 85vh solid transparent;
+}
+.video .tri.second {
+  opacity: 1;
+  mix-blend-mode: color;
+  border-left: 497px solid #2772A8;
+  border-top: 0;
+  border-bottom: 100vh solid transparent;
 }
 @media screen and (max-width: 500px) {
   .video .tri {
-    background: url(../image/banner_mark.png) no-repeat;
     bottom: 0;
     top: auto;
-    background-size: cover;
-    background-position: left;
+    border-right: 0 solid transparent;
+    border-left: 100vw solid #2772A8;
+    border-top: 43vh solid transparent;
+    border-bottom: 0;
     left: 0;
-    width: 100%;
-    height: 50vh;
+    right: auto;
+  }
+  .video .tri.second {
+    opacity: 1;
+    mix-blend-mode: color;
+    border-right: 0 solid transparent;
+    border-left: 120vw solid #2772A8;
+    border-top: 55vh solid transparent;
+    border-bottom: 0;
   }
 }
 .video .manufacturing {
@@ -737,6 +802,7 @@ header .header .menu_items .navigation span:last-of-type {
   position: absolute;
   bottom: 100px;
   left: 30px;
+  z-index: 1;
 }
 .video .info {
   background: white;
@@ -1081,6 +1147,7 @@ header .header .menu_items .navigation span:last-of-type {
   bottom: 0;
   overflow: hidden;
   top: 50%;
+  z-index: 10;
 }
 
 .scroll-down:before {
@@ -1138,6 +1205,13 @@ header .header .menu_items .navigation span:last-of-type {
   100% {
     transform: translate3d(0, 120px, 0);
   }
+}
+.policy {
+  position: relative;
+}
+.policy.appeartext {
+  position: fixed;
+  top: 0;
 }
 .policy .policy_slide .slide {
   height: 100vh;
@@ -1700,6 +1774,11 @@ header .header .menu_items .navigation span:last-of-type {
   height: 60vh;
   object-fit: cover;
 }
+@media screen and (max-width: 500px) {
+  .technical_slide .technical_video .technical_slider iframe {
+    width: 100vw;
+  }
+}
 .technical_slide .technical_video .slick-dots {
   display: flex;
   gap: 6px;
@@ -1819,6 +1898,8 @@ header .header .menu_items .navigation span:last-of-type {
   color: #9b9b9b;
   display: flex;
   align-items: center;
+  z-index: 9;
+  position: relative;
 }
 .products.column.information .title .products_slide .part .text_part p:first-of-type span {
   border: 1px solid #9b9b9b;
@@ -2027,8 +2108,9 @@ header .header .menu_items .navigation span:last-of-type {
 }
 @media screen and (max-width: 768px) {
   .products .title h2 {
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .products .title h2::before {
@@ -2069,6 +2151,7 @@ header .header .menu_items .navigation span:last-of-type {
 }
 @media screen and (max-width: 768px) {
   .products .title .products_slide {
+    padding-top: 85px;
     padding-bottom: 45px;
   }
 }
@@ -2545,12 +2628,42 @@ header .header .menu_items .navigation span:last-of-type {
   }
 }
 
+@-webkit-keyframes changeBg {
+  0% {
+    background-image: url("../image/recruit.png");
+  }
+  33% {
+    background-image: url("../image/recruit02.png");
+  }
+  66% {
+    background-image: url("../image/recruit03.png");
+  }
+  100% {
+    background-image: url("../image/recruit.png");
+  }
+}
+@keyframes changeBg {
+  0% {
+    background-image: url("../image/recruit.png");
+  }
+  33% {
+    background-image: url("../image/recruit02.png");
+  }
+  66% {
+    background-image: url("../image/recruit03.png");
+  }
+  100% {
+    background-image: url("../image/recruit.png");
+  }
+}
 .recruit {
-  background: url("../image/recruit.png");
+  background-image: url("../image/recruit.png");
   background-position: center;
   background-size: cover;
   margin-top: 140px;
   padding-bottom: 1px;
+  animation: changeBg 15s alternate;
+  -webkit-animation: changeBg 15s alternate;
 }
 @media screen and (max-width: 500px) {
   .recruit {
@@ -2695,6 +2808,7 @@ header .header .menu_items .navigation span:last-of-type {
     padding-right: 18px;
     padding-bottom: 0;
     margin-bottom: 0;
+    padding-top: 0;
   }
 }
 
@@ -2704,6 +2818,7 @@ footer {
   padding-bottom: 64px;
   position: relative;
   z-index: 4;
+  overflow: hidden;
 }
 @media screen and (max-width: 500px) {
   footer {
@@ -3133,6 +3248,10 @@ footer .footer .address .fo_logo .fo_image {
   letter-spacing: 0.5em;
   text-indent: 0.5em;
   overflow: hidden;
+}
+
+.ytp-chrome-top-buttons {
+  display: none !important;
 }
 
 header {
@@ -3571,10 +3690,6 @@ header .header .menu_items .navigation span {
 }
 .info_content .info_box.column .part {
   position: relative;
-  mask-image: linear-gradient(135deg, transparent 1.15rem, gold 0), linear-gradient(0deg, transparent 1.15rem, gold 0), linear-gradient(0deg, transparent 0, gold 0), linear-gradient(-45deg, transparent 1.15rem, gold 0);
-  mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
-  mask-repeat: no-repeat;
-  mask-size: 51% 51%;
   clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
 }
 .info_content .info_box.column .part .image_part .date {
@@ -4264,10 +4379,17 @@ header .header .menu_items .navigation span {
   justify-content: space-between;
   padding-bottom: 5px;
   border-bottom: 2px solid #000;
+  transition: 0.5s;
 }
 .basicPolicy .basic_policy_div a img {
   transform: rotate(90deg);
   width: 17px;
+}
+.basicPolicy .basic_policy_div a img.half-reverse {
+  transform: rotate(0);
+}
+.basicPolicy .basic_policy_div a:hover {
+  border-color: #2772A8;
 }
 @media screen and (max-width: 500px) {
   .basicPolicy .basic_policy_div a {
@@ -4543,17 +4665,20 @@ header .header .menu_items .navigation span {
   display: none;
 }
 .policy_step.company.history .profile_content table tr {
-  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 500px) {
   .policy_step.company.history .profile_content table tr {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 0;
+    display: table;
   }
 }
 .policy_step.company.history .profile_content table tr:first-of-type {
-  padding-top: 20px;
+  padding-top: 0;
   padding-bottom: 0;
 }
 @media screen and (max-width: 500px) {
@@ -4579,7 +4704,7 @@ header .header .menu_items .navigation span {
 }
 .policy_step.company.history .profile_content table tr:last-of-type {
   padding-top: 0;
-  padding-bottom: 40px;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 500px) {
   .policy_step.company.history .profile_content table tr:last-of-type {
@@ -4592,7 +4717,6 @@ header .header .menu_items .navigation span {
   padding-right: 37px;
   color: white;
   position: relative;
-  border-color: rgba(255, 255, 255, 0.4);
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 24px;
@@ -4603,7 +4727,6 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 500px) {
   .policy_step.company.history .profile_content table tr td:first-of-type {
-    border-right: 1px solid;
     border-color: rgba(255, 255, 255, 0.4);
     font-family: "Montserrat";
     font-weight: bold;
@@ -4614,6 +4737,8 @@ header .header .menu_items .navigation span {
     color: #fff;
     width: 100px;
     padding-right: 17px;
+    border-right: 1px solid;
+    border-color: rgba(255, 255, 255, 0.4);
   }
 }
 .policy_step.company.history .profile_content table tr td:first-of-type::after {
@@ -4652,6 +4777,7 @@ header .header .menu_items .navigation span {
 .policy_step.company.history .profile_content table tr td:last-of-type {
   width: 75%;
   padding-left: 40px;
+  border-color: rgba(255, 255, 255, 0.4);
   color: white;
   font-family: "Noto Sans JP";
   font-weight: normal;
@@ -4660,6 +4786,7 @@ header .header .menu_items .navigation span {
   line-height: 60px;
   text-align: left;
   color: #fff;
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 500px) {
   .policy_step.company.history .profile_content table tr td:last-of-type {
@@ -4671,8 +4798,11 @@ header .header .menu_items .navigation span {
     line-height: 20px;
     text-align: left;
     color: #fff;
-    display: table-cell;
+    display: block;
     padding-left: 17px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: 0;
   }
 }
 .policy_step.company .company_content {
@@ -4795,7 +4925,7 @@ header .header .menu_items .navigation span {
 @media screen and (max-width: 500px) {
   .policy_step.company .profile_content table tr:last-of-type td:last-of-type {
     border-bottom: none;
-    padding-bottom: 0;
+    padding-bottom: 30px;
     margin-bottom: 0;
   }
 }
@@ -4810,7 +4940,7 @@ header .header .menu_items .navigation span {
   }
 }
 .policy_step.company .profile_content table tr td:last-of-type {
-  padding-bottom: 0;
+  border-left: 1px solid #e1e1e1;
 }
 @media screen and (max-width: 500px) {
   .policy_step.company .profile_content table tr td:last-of-type {
@@ -4826,7 +4956,6 @@ header .header .menu_items .navigation span {
   line-height: 32px;
   text-align: left;
   color: #000;
-  border-right: 1px solid #e1e1e1;
 }
 @media screen and (max-width: 500px) {
   .policy_step.company .profile_content table tr td:first-of-type {
@@ -5232,10 +5361,11 @@ header .header .menu_items .navigation span {
 .policy_step .basic_step .step_header .title {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .policy_step .basic_step .step_header .title span {
   max-width: 310px;
-  width: 28%;
+  width: 29%;
   height: 1px;
   background: #2772a8;
 }
@@ -5782,7 +5912,7 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 500px) {
   .policy_step .inspection_container .inspectionItem {
-    padding-top: 60px;
+    padding-top: 15px;
     padding-bottom: 60px;
   }
 }
@@ -5808,33 +5938,84 @@ header .header .menu_items .navigation span {
   margin-right: auto;
   padding: 0 20px;
 }
-.policy_step .inspection_container .inspectionItem .inspectionItempart h2 {
-  font-family: "Montserrat";
-  font-weight: 500;
-  font-size: 80px;
-  letter-spacing: 0.02em;
-  line-height: 60px;
-  text-align: left;
-  color: #2772a8;
-}
-@media screen and (max-width: 500px) {
-  .policy_step .inspection_container .inspectionItem .inspectionItempart h2 {
-    font-size: 50px;
-    letter-spacing: 0.02em;
-    line-height: 34px;
-  }
-}
 .policy_step .inspection_container .inspectionItem .inspectionItempart .content {
   margin-top: 33px;
-  gap: 60px;
+  gap: 100px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 @media screen and (max-width: 500px) {
   .policy_step .inspection_container .inspectionItem .inspectionItempart .content {
     flex-direction: column;
     gap: 20px;
+  }
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .test {
+  max-width: 500px;
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .test img {
+  width: 100%;
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .test .testText {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .test .testText h2 {
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: 0.02em;
+  line-height: 50px;
+  text-align: center;
+  color: #2772a8;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  margin-left: 24px;
+}
+@media screen and (max-width: 500px) {
+  .policy_step .inspection_container .inspectionItem .inspectionItempart .content .test .testText h2 {
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    line-height: 35px;
+    text-align: left;
+    color: #2772a8;
+    margin-left: 0;
+  }
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .test .testText h3 {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  line-height: 32px;
+  text-align: center;
+  color: #2772a8;
+  writing-mode: vertical-lr;
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .test .testText p {
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+  margin-left: 60px;
+}
+@media screen and (max-width: 500px) {
+  .policy_step .inspection_container .inspectionItem .inspectionItempart .content .test .testText p {
+    font-family: "Noto Sans JP";
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    line-height: 28px;
+    text-align: left;
+    color: #000;
+    margin-left: 45px;
   }
 }
 .policy_step .inspection_container .inspectionItem .inspectionItempart .content .text {
@@ -5848,6 +6029,30 @@ header .header .menu_items .navigation span {
   line-height: 60px;
   text-align: left;
   color: #000;
+  display: flex;
+  align-items: center;
+}
+.policy_step .inspection_container .inspectionItem .inspectionItempart .content .text h3 span {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: 0.02em;
+  line-height: 60px;
+  text-align: left;
+  color: #2772a8;
+  margin-right: 45px;
+}
+@media screen and (max-width: 500px) {
+  .policy_step .inspection_container .inspectionItem .inspectionItempart .content .text h3 span {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.02em;
+    line-height: 37.5px;
+    text-align: left;
+    color: #2772a8;
+    margin-right: 12px;
+  }
 }
 @media screen and (max-width: 500px) {
   .policy_step .inspection_container .inspectionItem .inspectionItempart .content .text h3 {
@@ -6745,12 +6950,23 @@ header .header .menu_items .navigation span {
     flex-direction: column-reverse;
   }
 }
+@media screen and (max-width: 500px) {
+  .materials.tech .material_image p {
+    justify-content: right;
+    padding-right: 20px;
+  }
+}
 .materials.tech .text {
   left: 0;
   right: auto;
 }
 .materials.tech .text p:first-child {
   margin-right: auto;
+}
+@media screen and (max-width: 500px) {
+  .materials.tech .text p:first-child {
+    margin-left: 0;
+  }
 }
 .materials .material_image {
   display: flex;
@@ -6800,8 +7016,9 @@ header .header .menu_items .navigation span {
     text-align: left;
     color: #7c7c7c;
     text-align: center;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 30px;
+    padding-left: 20px;
   }
 }
 .materials .text {
@@ -6865,6 +7082,8 @@ header .header .menu_items .navigation span {
     background-color: white;
     margin-top: -50px;
     padding: 30px 30px 0;
+    max-width: 316px;
+    margin-right: 0;
   }
   .materials .text p:first-child span {
     font-family: "Montserrat";
@@ -7930,10 +8149,32 @@ header .header .menu_items .navigation span {
   }
 }
 
+.close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: url(../image/close.svg) no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+@media screen and (max-width: 500px) {
+  .close {
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .popup {
   z-index: 1001;
   width: 930px;
   overflow: hidden;
+  overflow-y: scroll;
+  clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
 }
 .popup.activity .awards_slider .part {
   padding-bottom: 0;
@@ -7957,17 +8198,32 @@ header .header .menu_items .navigation span {
   display: none;
 }
 .popup .slick-list {
-  overflow-y: scroll;
-  height: 90ch;
+  height: auto;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 500px) {
+  .popup .slick-list {
+    padding: 0;
+  }
 }
 .popup .awards_slider {
   max-width: 930px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 500px) {
+  .popup .awards_slider {
+    overflow: initial;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 .popup .awards_slider .slick-arrow {
   position: absolute;
-  bottom: -55px;
+  bottom: 0;
   width: 40px;
   height: 40px;
   background: url(../image/grey_arrow.svg) no-repeat;
@@ -7992,7 +8248,7 @@ header .header .menu_items .navigation span {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -55px;
+  bottom: 0;
 }
 @media screen and (max-width: 500px) {
   .popup .awards_slider .slider__counter {
@@ -8181,7 +8437,9 @@ header .header .menu_items .navigation span {
 }
 @media screen and (max-width: 500px) {
   .popup {
-    width: 350px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
   }
   .popup .slick-list {
@@ -8192,6 +8450,9 @@ header .header .menu_items .navigation span {
 
 .p_body {
   z-index: 1000;
+  background: url(../image/p_body.png) no-repeat;
+  background-size: cover;
+  opacity: 1;
 }
 
 #A,
@@ -8728,6 +8989,14 @@ header .header .menu_items .navigation span {
     display: block;
     height: 0;
     width: 0;
+  }
+}
+.env {
+  display: inline-block !important;
+}
+@media screen and (max-width: 500px) {
+  .env {
+    display: none;
   }
 }
 

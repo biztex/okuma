@@ -412,10 +412,6 @@ header {
         &.column {
             .part {
                 position: relative;
-                mask-image: linear-gradient( 135deg, transparent 1.15rem, gold 0), linear-gradient( 0deg, transparent 1.15rem, gold 0), linear-gradient( 0deg, transparent 0, gold 0), linear-gradient( -45deg, transparent 1.15rem, gold 0);
-                mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
-                mask-repeat: no-repeat;
-                mask-size: 51% 51%;
                 clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
                 .image_part {
                     .date {
@@ -1076,9 +1072,16 @@ header {
             justify-content: space-between;
             padding-bottom: 5px;
             border-bottom: 2px solid #000;
+            transition: .5s;
             img {
                 transform: rotate(90deg);
                 width: 17px;
+                &.half-reverse {
+                    transform: rotate(0);
+                }
+            }
+            &:hover {
+                border-color: #2772A8;
             }
             @include media-screen($smart) {
                 font-size: 16px;
@@ -1334,13 +1337,16 @@ header {
                 }
                 table {
                     tr {
+                        display: flex;
+                        align-items: flex-start;
                         @include media-screen($smart) {
                             padding-left: 15px;
                             padding-right: 15px;
                             padding-bottom: 0;
+                            display: table;
                         }
                         &:first-of-type {
-                            padding-top: 20px;
+                            padding-top: 0;
                             padding-bottom: 0;
                             @include media-screen($smart) {
                                 padding-top: 0;
@@ -1355,7 +1361,7 @@ header {
                                 }
                             }
                         }
-                        padding-bottom: 10px;
+                        padding-bottom: 0;
                         td {
                             padding-bottom: 10px;
                             display: table-cell;
@@ -1367,7 +1373,7 @@ header {
                         }
                         &:last-of-type {
                             padding-top: 0;
-                            padding-bottom: 40px;
+                            padding-bottom: 0;
                             @include media-screen($smart) {
                                 padding-bottom: 0;
                             }
@@ -1379,7 +1385,6 @@ header {
                                 padding-right: 37px;
                                 color: white;
                                 position: relative;
-                                border-color: rgba($color: #ffffff, $alpha: 0.4);
                                 font-family: "Montserrat";
                                 font-weight: bold;
                                 font-size: 24px;
@@ -1388,7 +1393,6 @@ header {
                                 text-align: right;
                                 color: #fff;
                                 @include media-screen($smart) {
-                                    border-right: 1px solid;
                                     border-color: rgba($color: #ffffff, $alpha: 0.4);
                                     font-family: "Montserrat";
                                     font-weight: bold;
@@ -1399,6 +1403,8 @@ header {
                                     color: #fff;
                                     width: 100px;
                                     padding-right: 17px;
+                                    border-right: 1px solid;
+                                    border-color: rgba(255, 255, 255, 0.4);
                                 }
                                 &::after {
                                     content: '';
@@ -1435,6 +1441,7 @@ header {
                             &:last-of-type {
                                 width: 75%;
                                 padding-left: 40px;
+                                border-color: rgba($color: #ffffff, $alpha: 0.4);
                                 color: white;
                                 font-family: "Noto Sans JP";
                                 font-weight: normal;
@@ -1443,6 +1450,7 @@ header {
                                 line-height: 60px;
                                 text-align: left;
                                 color: #fff;
+                                padding-bottom: 10px;
                                 @include media-screen($smart) {
                                     border-bottom: none;
                                     font-family: "Noto Sans JP";
@@ -1452,8 +1460,11 @@ header {
                                     line-height: 20px;
                                     text-align: left;
                                     color: #fff;
-                                    display: table-cell;
+                                    display: block;
                                     padding-left: 17px;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    border-left: 0;
                                 }
                             }
                         }
@@ -1564,7 +1575,7 @@ header {
                             td {
                                 &:last-of-type {
                                     border-bottom: none;
-                                    padding-bottom: 0;
+                                    padding-bottom: 30px;
                                     margin-bottom: 0;
                                 }
                             }
@@ -1578,10 +1589,10 @@ header {
                             padding-bottom: 0;
                         }
                         &:last-of-type {
-                            padding-bottom: 0;
                             @include media-screen($smart) {
                                 padding-bottom: 10px;
                             }
+                            border-left: 1px solid #e1e1e1;
                         }
                         &:first-of-type {
                             width: 140px;
@@ -1592,7 +1603,6 @@ header {
                             line-height: 32px;
                             text-align: left;
                             color: #000;
-                            border-right: 1px solid #e1e1e1;
                             @include media-screen($smart) {
                                 width: 100%;
                                 font-family: "Noto Sans JP";
@@ -1993,9 +2003,10 @@ header {
             .title {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 span {
                     max-width: 310px;
-                    width: 28%;
+                    width: 29%;
                     height: 1px;
                     background: #2772a8;
                     @include media-screen($smart) {
@@ -2500,7 +2511,7 @@ header {
             padding-top: 80px;
             padding-bottom: 80px;
             @include media-screen($smart) {
-                padding-top: 60px;
+                padding-top: 15px;
                 padding-bottom: 60px;
             }
             .back_image {
@@ -2524,29 +2535,78 @@ header {
                 margin-left: auto;
                 margin-right: auto;
                 padding: 0 20px;
-                h2 {
-                    font-family: "Montserrat";
-                    font-weight: 500;
-                    font-size: 80px;
-                    letter-spacing: 0.02em;
-                    line-height: 60px;
-                    text-align: left;
-                    color: #2772a8;
-                    @include media-screen($smart) {
-                        font-size: 50px;
-                        letter-spacing: 0.02em;
-                        line-height: 34px;
-                    }
-                }
                 .content {
                     margin-top: 33px;
-                    gap: 60px;
+                    gap: 100px;
                     display: flex;
-                    align-items: center;
+                    align-items: flex-end;
                     justify-content: space-between;
                     @include media-screen($smart) {
                         flex-direction: column;
                         gap: 20px;
+                    }
+                    .test {
+                        max-width: 500px;
+                        img {
+                            width: 100%;
+                        }
+                        .testText {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 50px;
+                            h2 {
+                                font-family: "Noto Sans JP";
+                                font-weight: 500;
+                                font-size: 40px;
+                                letter-spacing: 0.02em;
+                                line-height: 50px;
+                                text-align: center;
+                                color: #2772a8;
+                                text-orientation: upright;
+                                writing-mode: vertical-rl;
+                                margin-left: 24px;
+                                @include media-screen($smart) {
+                                    font-family: "Noto Sans JP";
+                                    font-weight: 500;
+                                    font-size: 30px;
+                                    letter-spacing: 0.02em;
+                                    line-height: 35px;
+                                    text-align: left;
+                                    color: #2772a8;
+                                    margin-left: 0;
+                                }
+                            }
+                            h3 {
+                                font-family: "Montserrat";
+                                font-weight: normal;
+                                font-size: 12px;
+                                letter-spacing: 0.05em;
+                                line-height: 32px;
+                                text-align: center;
+                                color: #2772a8;
+                                writing-mode: vertical-lr;
+                            }
+                            p {
+                                font-family: "Noto Sans JP";
+                                font-weight: normal;
+                                font-size: 15px;
+                                letter-spacing: 0.05em;
+                                line-height: 30px;
+                                text-align: left;
+                                color: #000;
+                                margin-left: 60px;
+                                @include media-screen($smart) {
+                                    font-family: "Noto Sans JP";
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    letter-spacing: 0.03em;
+                                    line-height: 28px;
+                                    text-align: left;
+                                    color: #000;
+                                    margin-left: 45px;
+                                }
+                            }
+                        }
                     }
                     .text {
                         max-width: 440px;
@@ -2558,6 +2618,28 @@ header {
                             line-height: 60px;
                             text-align: left;
                             color: #000;
+                            display: flex;
+                            align-items: center;
+                            span {
+                                font-family: Montserrat;
+                                font-weight: 500;
+                                font-size: 40px;
+                                letter-spacing: 0.02em;
+                                line-height: 60px;
+                                text-align: left;
+                                color: #2772a8;
+                                margin-right: 45px;
+                                @include media-screen($smart) {
+                                    font-family: "Montserrat";
+                                    font-weight: 500;
+                                    font-size: 25px;
+                                    letter-spacing: 0.02em;
+                                    line-height: 37.5px;
+                                    text-align: left;
+                                    color: #2772a8;
+                                    margin-right: 12px;
+                                }
+                            }
                             @include media-screen($smart) {
                                 font-family: "Noto Sans JP";
                                 font-weight: 500;
@@ -3378,12 +3460,21 @@ header {
             @include media-screen($smart) {
                 flex-direction: column-reverse;
             }
+            p {
+                @include media-screen($smart) {
+                    justify-content: right;
+                    padding-right: 20px;
+                }
+            }
         }
         .text {
             left: 0;
             right: auto;
             p:first-child {
                 margin-right: auto;
+                @include media-screen($smart) {
+                    margin-left: 0;
+                }
             }
         }
     }
@@ -3428,8 +3519,9 @@ header {
                 text-align: left;
                 color: #7c7c7c;
                 text-align: center;
-                justify-content: center;
+                justify-content: left;
                 margin-bottom: 30px;
+                padding-left: 20px;
             }
         }
     }
@@ -3490,6 +3582,8 @@ header {
                     background-color: white;
                     margin-top: -50px;
                     padding: 30px 30px 0;
+                    max-width: 316px;
+                    margin-right: 0;
                     span {
                         font-family: "Montserrat";
                         font-weight: bold;
@@ -4474,10 +4568,30 @@ header {
     }
 }
 
+.close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background: url(../image/close.svg) no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    @include media-screen($smart) {
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .popup {
     z-index: 1001;
     width: 930px;
     overflow: hidden;
+    overflow-y: scroll;
+    clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
     &.activity {
         .awards_slider {
             .part {
@@ -4508,16 +4622,27 @@ header {
         }
     }
     .slick-list {
-        overflow-y: scroll;
-        height: 90ch;
+        height: auto;
+        padding-bottom: 50px;
+        @include media-screen($smart) {
+            padding: 0;
+        }
     }
     .awards_slider {
         max-width: 930px;
         margin-left: auto;
         margin-right: auto;
+        overflow: hidden;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        @include media-screen($smart) {
+            overflow: initial;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
         .slick-arrow {
             position: absolute;
-            bottom: -55px;
+            bottom: 0;
             width: 40px;
             height: 40px;
             background: url(../image/grey_arrow.svg) no-repeat;
@@ -4540,7 +4665,7 @@ header {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -55px;
+            bottom: 0;
             @include media-screen($smart) {
                 background: white;
                 text-align: center;
@@ -4711,7 +4836,9 @@ header {
         }
     }
     @include media-screen($smart) {
-        width: 350px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
         overflow: hidden;
         .slick-list {
             overflow-y: scroll;
@@ -4722,6 +4849,9 @@ header {
 
 .p_body {
     z-index: 1000;
+    background: url(../image/p_body.png) no-repeat;
+    background-size: cover;
+    opacity: 1;
 }
 
 #A,
@@ -5243,5 +5373,12 @@ header {
         display: block;
         height: 0;
         width: 0
+    }
+}
+
+.env {
+    display: inline-block !important;
+    @include media-screen($smart) {
+        display: none;
     }
 }

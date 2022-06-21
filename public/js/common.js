@@ -161,6 +161,7 @@ $(function() {
             pauseOnFocus: false,
             pauseOnHover: false,
             dots: true,
+            infinite: false,
         }).slickAnimation();
     } catch (error) {
 
@@ -177,7 +178,7 @@ $(function() {
         pauseOnHover: false, //オンマウスでスライドを一時停止させるかどうか。初期値はtrue。
         pauseOnFocus: false, //フォーカスした際にスライドを一時停止させるかどうか。初期値はtrue。
         cssEase: 'linear', //動き方。初期値はeaseですが、スムースな動きで見せたいのでlinear
-        slidesToShow: 4, //スライドを画面に4枚見せる
+        slidesToShow: 3.5, //スライドを画面に4枚見せる
         slidesToScroll: 1, //1回のスライドで動かす要素数
         responsive: [{
                 breakpoint: 769, //モニターの横幅が769px以下の見せ方
@@ -203,7 +204,7 @@ $(function() {
         pauseOnHover: false, //オンマウスでスライドを一時停止させるかどうか。初期値はtrue。
         pauseOnFocus: false, //フォーカスした際にスライドを一時停止させるかどうか。初期値はtrue。
         cssEase: 'linear', //動き方。初期値はeaseですが、スムースな動きで見せたいのでlinear
-        slidesToShow: 4, //スライドを画面に4枚見せる
+        slidesToShow: 3.5, //スライドを画面に4枚見せる
         slidesToScroll: 1, //1回のスライドで動かす要素数
         responsive: [{
                 breakpoint: 769, //モニターの横幅が769px以下の見せ方
@@ -439,11 +440,6 @@ try {
 } catch (error) {}
 TextAnimeControl();
 
-// 画面をスクロールをしたら動かしたい場合の記述
-$(window).scroll(function() {
-    EachTextAnimeControl(); /* アニメーション用の関数を呼ぶ*/
-    TextAnimeControl();
-}); // ここまで画面をスクロールをしたら動かしたい場合の記述
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
 
@@ -475,42 +471,52 @@ EachTextAnimeControl(); /* アニメーション用の関数を呼ぶ*/
 
 
 
-$('.policy_slide').on('init', function(event, slick, currentSlide) {
-    const CurrentSlideDom = $(slick.$slides.get(currentSlide)).find(".slide_title");
-    const CLASSNAME = "-visible";
-    CurrentSlideDom.eq(0).addClass(CLASSNAME);
+// $('.policy_slide').on('init', function(event, slick, currentSlide) {
+//     const CurrentSlideDom = $(slick.$slides.get(currentSlide)).find(".slide_title");
+//     const CLASSNAME = "-visible";
+//     CurrentSlideDom.eq(0).addClass(CLASSNAME);
 
 
-});
-
-$('.policy_slide')
-    .on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-
-        const CurrentSlideDom = $(slick.$slides.get(currentSlide));
-        const nextSlideDom = $(slick.$slides.get(nextSlide)).find(".slide_title");
-        const CLASSNAME = "-visible";
-        let $target = CurrentSlideDom.find(".slide_title");
-        if (nextSlideDom.hasClass(CLASSNAME)) {
-            $(this).removeClass(CLASSNAME);
-        }
-        $target.removeClass(CLASSNAME);
-
-        CurrentSlideDom.find(".textAnimation").removeClass("appeartext")
-
-    });
-
-$('.policy_slide')
-    .on('afterChange', function(event, slick, currentSlide, nextSlide) {
-
-        const CurrentSlideDom = $(slick.$slides.get(currentSlide));
-        const CLASSNAME = "-visible";
-        let $target = CurrentSlideDom.find(".slide_title");
-        $target.addClass(CLASSNAME);
-
-        CurrentSlideDom.find(".textAnimation").addClass("appeartext")
+// });
 
 
-    });
+
+// $('.policy_slide')
+//     .on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+//         const CurrentSlideDom = $(slick.$slides.get(currentSlide));
+//         const nextSlideDom = $(slick.$slides.get(nextSlide)).find(".slide_title");
+//         const CLASSNAME = "-visible";
+//         let $target = CurrentSlideDom.find(".slide_title");
+//         if (nextSlideDom.hasClass(CLASSNAME)) {
+//             $(this).removeClass(CLASSNAME);
+//         }
+//         $target.removeClass(CLASSNAME);
+
+//         CurrentSlideDom.find(".textAnimation").removeClass("appeartext")
+
+//     });
+
+// $('.policy_slide')
+//     .on('afterChange', function(event, slick, currentSlide, nextSlide) {
+//         const CurrentSlideDom = $(slick.$slides.get(currentSlide));
+//         const CLASSNAME = "-visible";
+//         let $target = CurrentSlideDom.find(".slide_title");
+//         $target.addClass(CLASSNAME);
+
+//         CurrentSlideDom.find(".textAnimation").addClass("appeartext")
+
+
+//     });
+
+
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function() {
+    EachTextAnimeControl(); /* アニメーション用の関数を呼ぶ*/
+    TextAnimeControl();
+
+}); // ここまで画面をスクロールをしたら動かしたい場合の記述
+
+
 
 
 try {
@@ -760,7 +766,7 @@ function getOffset(el) {
 }
 
 
-$(".productDetail_box_downloadAnchor a, .basic_policy_div a").on('click', function(event) {
+$(".productDetail_box_downloadAnchor a, .basic_policy_div a,.map_link").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
         // Prevent default anchor click behavior

@@ -363,21 +363,61 @@ header {
 }
 header .nav_menu {
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: url(../image/mainbanner.png) no-repeat;
+  background-size: cover;
   display: none;
   width: 100%;
   height: 100vh;
   top: 0;
   padding: 170px 40px 170px 60px;
   z-index: 100;
+  overflow: hidden;
 }
 @media screen and (max-width: 500px) {
   header .nav_menu {
-    padding: 94px 30px 94px 30px;
+    padding: 88px 30px 0 30px;
+    overflow-y: auto;
+  }
+}
+header .nav_menu .tri {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  top: 0;
+  opacity: 0.6;
+  border-right: 0;
+  border-left: 31.796875vw solid #2772A8;
+  border-top: 0;
+  border-bottom: 85vh solid transparent;
+}
+header .nav_menu .tri.second {
+  opacity: 1;
+  mix-blend-mode: color;
+  border-left: 38.828125vw solid #2772A8;
+  border-top: 0;
+  border-bottom: 100vh solid transparent;
+}
+@media screen and (max-width: 500px) {
+  header .nav_menu .tri {
+    background: url(../image/banner_mark.png) no-repeat;
+    bottom: auto;
+    top: 0;
+    border-left: 75vw solid #2772A8;
+    border-top: 0;
+    border-bottom: 70vh solid transparent;
+  }
+  header .nav_menu .tri.second {
+    opacity: 1;
+    mix-blend-mode: color;
+    border-left: 90vw solid #2772A8;
+    border-top: 0;
+    border-bottom: 85vh solid transparent;
   }
 }
 header .nav_menu_part {
   display: flex;
+  position: relative;
+  z-index: 1;
   gap: 11.5vw;
 }
 @media screen and (max-width: 960px) {
@@ -399,19 +439,19 @@ header .nav_menu_part {
 }
 @media screen and (max-width: 500px) {
   header .nav_menu_part dl:first-child dd:first-child {
-    grid-area: "header";
+    grid-area: header;
   }
   header .nav_menu_part dl:first-child dd:nth-child(2) {
-    grid-area: "menu";
+    grid-area: menu;
   }
   header .nav_menu_part dl:first-child dd:nth-child(3) {
-    grid-area: "main";
+    grid-area: main;
   }
   header .nav_menu_part dl:first-child dd:last-child {
-    grid-area: "right";
+    grid-area: right;
   }
   header .nav_menu_part dl:first-child dd:last-child {
-    grid-area: "footer";
+    grid-area: footer;
   }
 }
 @media screen and (max-width: 500px) {
@@ -426,13 +466,13 @@ header .nav_menu_part {
     grid-template-areas: "header header" "left right";
   }
   header .nav_menu_part dl:last-child dd:nth-child(3) {
-    grid-area: "header";
+    grid-area: header;
   }
   header .nav_menu_part dl:last-child dd:nth-child(4) {
-    grid-area: "left";
+    grid-area: left;
   }
   header .nav_menu_part dl:last-child dd:last-child {
-    grid-area: "right";
+    grid-area: right;
   }
 }
 header .nav_menu_part dl dd {
@@ -440,7 +480,7 @@ header .nav_menu_part dl dd {
 }
 @media screen and (max-width: 500px) {
   header .nav_menu_part dl dd {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 }
 header .nav_menu_part dl dd h3 {
@@ -474,7 +514,7 @@ header .nav_menu_part dl dd p {
   header .nav_menu_part dl dd p {
     font-size: 13px;
     letter-spacing: 0.04em;
-    line-height: 26px;
+    line-height: 22px;
   }
 }
 header .nav_menu_part dl dd p::after {
@@ -505,6 +545,11 @@ header .nav_menu_part dl dd.policy h3 {
   align-items: center;
   gap: 10px;
 }
+@media screen and (max-width: 500px) {
+  header .nav_menu_part dl dd.policy h3 {
+    font-size: 13px;
+  }
+}
 header .nav_menu_part dl dd.policy p {
   font-family: "Noto Sans JP";
   font-weight: normal;
@@ -513,6 +558,12 @@ header .nav_menu_part dl dd.policy p {
   line-height: 30px;
   text-align: left;
   color: #fff;
+}
+@media screen and (max-width: 500px) {
+  header .nav_menu_part dl dd.policy p {
+    font-size: 12px;
+    line-height: 26px;
+  }
 }
 header .nav_menu .social {
   position: fixed;
@@ -698,33 +749,47 @@ header .header .menu_items .navigation span:last-of-type {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.6;
   transform: translate3d(0, 0, 10px);
   background-size: cover;
+  mix-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .video .tri {
-  background: url(../image/banner_mark_pc.png) no-repeat;
-  width: 40%;
-  height: 100vh;
-  background-size: cover;
-  background-position: right;
   position: absolute;
   left: 0;
   z-index: 0;
   top: 0;
   opacity: 0.6;
+  border-right: 0;
+  border-left: 407px solid #2772A8;
+  border-top: 0;
+  border-bottom: 85vh solid transparent;
+}
+.video .tri.second {
+  opacity: 1;
+  mix-blend-mode: color;
+  border-left: 497px solid #2772A8;
+  border-top: 0;
+  border-bottom: 100vh solid transparent;
 }
 @media screen and (max-width: 500px) {
   .video .tri {
-    background: url(../image/banner_mark.png) no-repeat;
     bottom: 0;
     top: auto;
-    background-size: cover;
-    background-position: left;
+    border-right: 0 solid transparent;
+    border-left: 100vw solid #2772A8;
+    border-top: 43vh solid transparent;
+    border-bottom: 0;
     left: 0;
-    width: 100%;
-    height: 50vh;
+    right: auto;
+  }
+  .video .tri.second {
+    opacity: 1;
+    mix-blend-mode: color;
+    border-right: 0 solid transparent;
+    border-left: 120vw solid #2772A8;
+    border-top: 55vh solid transparent;
+    border-bottom: 0;
   }
 }
 .video .manufacturing {
@@ -737,6 +802,7 @@ header .header .menu_items .navigation span:last-of-type {
   position: absolute;
   bottom: 100px;
   left: 30px;
+  z-index: 1;
 }
 .video .info {
   background: white;
@@ -1081,6 +1147,7 @@ header .header .menu_items .navigation span:last-of-type {
   bottom: 0;
   overflow: hidden;
   top: 50%;
+  z-index: 10;
 }
 
 .scroll-down:before {
@@ -1138,6 +1205,13 @@ header .header .menu_items .navigation span:last-of-type {
   100% {
     transform: translate3d(0, 120px, 0);
   }
+}
+.policy {
+  position: relative;
+}
+.policy.appeartext {
+  position: fixed;
+  top: 0;
 }
 .policy .policy_slide .slide {
   height: 100vh;
@@ -1700,6 +1774,11 @@ header .header .menu_items .navigation span:last-of-type {
   height: 60vh;
   object-fit: cover;
 }
+@media screen and (max-width: 500px) {
+  .technical_slide .technical_video .technical_slider iframe {
+    width: 100vw;
+  }
+}
 .technical_slide .technical_video .slick-dots {
   display: flex;
   gap: 6px;
@@ -1819,6 +1898,8 @@ header .header .menu_items .navigation span:last-of-type {
   color: #9b9b9b;
   display: flex;
   align-items: center;
+  z-index: 9;
+  position: relative;
 }
 .products.column.information .title .products_slide .part .text_part p:first-of-type span {
   border: 1px solid #9b9b9b;
@@ -2027,8 +2108,9 @@ header .header .menu_items .navigation span:last-of-type {
 }
 @media screen and (max-width: 768px) {
   .products .title h2 {
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .products .title h2::before {
@@ -2069,6 +2151,7 @@ header .header .menu_items .navigation span:last-of-type {
 }
 @media screen and (max-width: 768px) {
   .products .title .products_slide {
+    padding-top: 85px;
     padding-bottom: 45px;
   }
 }
@@ -2545,12 +2628,42 @@ header .header .menu_items .navigation span:last-of-type {
   }
 }
 
+@-webkit-keyframes changeBg {
+  0% {
+    background-image: url("../image/recruit.png");
+  }
+  33% {
+    background-image: url("../image/recruit02.png");
+  }
+  66% {
+    background-image: url("../image/recruit03.png");
+  }
+  100% {
+    background-image: url("../image/recruit.png");
+  }
+}
+@keyframes changeBg {
+  0% {
+    background-image: url("../image/recruit.png");
+  }
+  33% {
+    background-image: url("../image/recruit02.png");
+  }
+  66% {
+    background-image: url("../image/recruit03.png");
+  }
+  100% {
+    background-image: url("../image/recruit.png");
+  }
+}
 .recruit {
-  background: url("../image/recruit.png");
+  background-image: url("../image/recruit.png");
   background-position: center;
   background-size: cover;
   margin-top: 140px;
   padding-bottom: 1px;
+  animation: changeBg 15s alternate;
+  -webkit-animation: changeBg 15s alternate;
 }
 @media screen and (max-width: 500px) {
   .recruit {
@@ -2695,6 +2808,7 @@ header .header .menu_items .navigation span:last-of-type {
     padding-right: 18px;
     padding-bottom: 0;
     margin-bottom: 0;
+    padding-top: 0;
   }
 }
 
@@ -2704,6 +2818,7 @@ footer {
   padding-bottom: 64px;
   position: relative;
   z-index: 4;
+  overflow: hidden;
 }
 @media screen and (max-width: 500px) {
   footer {
@@ -3133,6 +3248,10 @@ footer .footer .address .fo_logo .fo_image {
   letter-spacing: 0.5em;
   text-indent: 0.5em;
   overflow: hidden;
+}
+
+.ytp-chrome-top-buttons {
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -56,7 +56,10 @@
             </div>
         </div>
         <nav class="nav_menu">
-
+            <div class="tri">
+            </div>
+            <div class="tri second">
+            </div>
             <div class="nav_menu_part">
                 <dl>
                     <dd>
@@ -191,19 +194,19 @@
     <!-- 基本方針 -->
     <section class="basicPolicy company">
         <div class="basic_policy_div">
-            <a href="">代表挨拶 <img src="./image/right_arrow.png"></a>
-            <a href="">会社情報<img src="./image/right_arrow.png"></a>
-            <a href="">沿革<img src="./image/right_arrow.png"></a>
-            <a href="">受賞歴<img src="./image/right_arrow.png"></a>
-            <a href="">取引･納品実績<img src="./image/right_arrow.png"></a>
-            <a href="">取り組み･活動<img src="./image/right_arrow.png"></a>
+            <a href="#message">代表挨拶 <img src="./image/right_arrow.png"></a>
+            <a href="#profile">会社情報<img src="./image/right_arrow.png"></a>
+            <a href="#history">沿革<img src="./image/right_arrow.png"></a>
+            <a href="#award">受賞歴<img src="./image/right_arrow.png"></a>
+            <a href="#client">取引･納品実績<img src="./image/right_arrow.png"></a>
+            <a href="/activity.html" class="">取り組み･活動<img src="./image/right_arrow.png" class="half-reverse"></a>
             <a href=""></a>
             <a href=""></a>
         </div>
     </section>
 
 
-    <section class="policy_step company">
+    <section class="policy_step company" id="message">
         <div class="basic_step">
             <div class="step_header">
                 <div class="title">
@@ -240,7 +243,7 @@
     </section>
 
 
-    <section class="policy_step company">
+    <section class="policy_step company" id="profile">
         <div class="basic_step">
             <div class="step_header">
                 <div class="title">
@@ -267,8 +270,7 @@
                             役員
                         </td>
                         <td>
-                            代表取締役会長　大隈 晴明 <span class="pc">／ </span><br class="sp"> 代表取締役社長　大隈 賢一郎 <span class="pc">／</span><br class="sp"> 取締役副社長　大隈 崇史 <span class="pc">／ </span> <br class="sp"> 顧問　大隈 長之 <span class="pc">／ </span><br class="sp"> 監査役　稲葉
-                            武彦
+                            代表取締役会長　大隈 晴明 <span class="env">／ </span><br class="sp"> 代表取締役社長　大隈 賢一郎 <span class="env">／</span><br class="sp"> 取締役副社長　大隈 崇史 <span class="env">／ </span> <br class="sp"> 顧問　大隈 長之 <span class="env">／ </span><br class="sp">                            監査役　稲葉 武彦
                         </td>
                     </tr>
                     <tr>
@@ -323,15 +325,15 @@
                             所在地
                         </td>
                         <td>
-                            <span>【本社・朝倉工場】<img src="./image/map01.png"/></span> 〒838-1305 福岡県朝倉市菱野1548<br> TEL.0946-52-2800 FAX.0946-52-2804<br> 朝倉工場のモノづくり
+                            <span>【本社・朝倉工場】<a href="#map" class="map_link"><img src="./image/map01.png"/></a></span> 〒838-1305 福岡県朝倉市菱野1548<br> TEL.0946-52-2800 FAX.0946-52-2804<br> 朝倉工場のモノづくり
                             <br><br>
-                            <span>【甘木工場】<img src="./image/map02.png"/></span> 〒838-0026 福岡県朝倉市柿原567
+                            <span>【甘木工場】<a href="#map" class="map_link"><img src="./image/map02.png"/></a></span> 〒838-0026 福岡県朝倉市柿原567
                             <br> TEL.0946-22-6463 FAX.0946-22-1254
                             <br> 甘木工場のモノづくり
 
                             <br><br>
 
-                            <span>【宝珠山工場】<img src="./image/map03.png"/></span> 〒838-1702 福岡県朝倉郡東峰村大字福井964
+                            <span>【宝珠山工場】<a href="#map" class="map_link"><img src="./image/map03.png"/></a></span> 〒838-1702 福岡県朝倉郡東峰村大字福井964
                             <br>TEL.0946-72-2800 FAX.0946-72-2070
                             <br>宝珠山工場のモノづくり
 
@@ -360,12 +362,13 @@
     </section>
 
 
-    <section class="company_map">
-        <img src="./image/map.png" />
+    <section class="company_map" id="map">
+        <iframe width="100%" height="100%" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB6uj6h3etqkdPQ94WnxbZflV9x9dQjtDo&q=福岡県" allowfullscreen>
+      </iframe>
     </section>
 
 
-    <section class="policy_step company history">
+    <section class="policy_step company history" id="history">
         <div class="basic_step">
             <div class="step_header">
                 <div class="title">
@@ -414,7 +417,8 @@
                             1970
                         </td>
                         <td>
-                            朝倉市柿原に甘木工場を新設<br>
+                            <p>
+                                朝倉市柿原に甘木工場を新設</p>
                             <img src="./image/history02.png" />
                         </td>
                     </tr>
@@ -545,17 +549,10 @@
                         </td>
                         <td>
                             中国湖北省に『欧克玛家居（湖北）有限公司』を設立
-
+                            <br><br class="sp"> “DAI SERIES”にて『福岡産業デザイン賞2012 優秀賞』を受賞
                         </td>
                     </tr>
-                    <tr>
-                        <td>
 
-                        </td>
-                        <td>
-                            “DAI SERIES”にて『福岡産業デザイン賞2012 優秀賞』を受賞
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             2013
@@ -586,59 +583,32 @@
                         </td>
                         <td>
                             中国山東省青島市に膠州工場 新設
-
+                            <br><br class="sp"> “PANE LOUVER”が『ウッドデザイン賞2016 ライフスタイルデザイン部門』を受賞
                         </td>
                     </tr>
-                    <tr>
-                        <td>
 
-                        </td>
-                        <td>
-                            “PANE LOUVER”が『ウッドデザイン賞2016 ライフスタイルデザイン部門』を受賞
-
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             2017
                         </td>
                         <td>
                             『福岡県ものづくりモノ語り100』に掲載される
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-                            経済産業省より『経営力向上計画』の認定を受ける
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-                            経済産業省より『地域未来牽引企業』に選定される
+                            <br><br class="sp"> 経済産業省より『経営力向上計画』の認定を受ける
+                            <br><br class="sp">経済産業省より『地域未来牽引企業』に選定される
 
                         </td>
                     </tr>
+
                     <tr>
                         <td>
                             2018
                         </td>
                         <td>
                             経済産業省より『健康経営優良法人2018』に認証される
+                            <br><br class="sp"> 環境省が推進している『Fun to share』に参加
                         </td>
                     </tr>
-                    <tr>
-                        <td>
 
-                        </td>
-                        <td>
-                            環境省が推進している『Fun to share』に参加
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             2019
@@ -661,7 +631,7 @@
     </section>
 
 
-    <section class="policy_step awards">
+    <section class="policy_step awards" id="award">
         <div class="basic_step">
             <div class="step_header">
                 <div class="title">
@@ -736,7 +706,7 @@
     </section>
 
 
-    <section class="policy_step">
+    <section class="policy_step" id="client">
         <div class="basic_step">
             <div class="step_header">
                 <div class="title">
@@ -820,8 +790,8 @@
             </p>
         </div>
         <div class="link information">
-            <a href="">取り組み･活動 <img src="./image/smart_right_arrow.svg"></a>
-            <a href="">企業方針 <img src="./image/smart_right_arrow.svg"></a>
+            <a href="/activity.html">取り組み･活動 <img src="./image/smart_right_arrow.svg"></a>
+            <a href="/policy.html">企業方針 <img src="./image/smart_right_arrow.svg"></a>
         </div>
     </section>
 
